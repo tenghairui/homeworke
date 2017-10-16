@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+       li {
+           float: left;
+           list-style: none;
+           font-size: 40px;
+           color: red;
+       }
+    </style>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+       $(function () {
+
+           var str=" ★"
+           var str2 = "☆"
+           $("ul li ").on({
+               "mouseenter": function () {
+                   $("ul li").text(str2)
+                   $(this).text(str).prevAll().text(str)
+               },
+               "click": function () {
+                    $(this).addClass("abc").siblings().removeClass("abc")
+               },
+               "mouseout": function () {
+                    $("ul li ").text(str2)
+                   $("ul li.abc").text(str).prevAll().text(str)
+               }
+       })
+
+    })
+    </script>
+</head>
+<body>
+<ul>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+</ul>
+</body>
+</html>

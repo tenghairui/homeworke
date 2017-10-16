@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    var arr = ["首页","娱乐","游戏","音乐"]
+    var li =document.getElementsByTagName("li");
+    arr.forEach(function (v,i) {
+        li[i].innerHTML=i+1+":"+v
+    })
+</script>
+</body>
+</html>

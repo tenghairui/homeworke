@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        button {
+            margin-left: 50px;
+        }
+        img {
+            width: 500px;
+            height: 300px;
+            position: absolute;
+            left: 350px;
+            top: 200px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var but = document.getElementsByTagName("button")[0];
+            but.onclick=function(){
+                if(this.innerHTML==="关灯"){
+                    document.body.style.background="#000"
+                    this.innerHTML="开灯"
+                }else if(this.innerHTML==="开灯"){
+                    document.body.style.background="#fff";
+                    this.innerHTML="关灯"
+                }
+
+            }
+        }
+
+    </script>
+</head>
+<body>
+<button>关灯</button>
+<img src="image/2.jpg" alt=""/>
+</body>
+</html>

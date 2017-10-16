@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+function student(name,age){
+    this.name=name;
+    this.age=age;
+    this.study=function(){
+        console.log(this.name+"我爱你");
+    }
+}
+    var stu1 = new student("李白",18)
+    console.log(stu1)
+    console.log(stu1.name)
+    console.log(stu1.age);
+    stu1.study()
+</script>
+</body>
+</html>

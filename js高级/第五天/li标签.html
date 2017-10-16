@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        .bbb {
+            width: 200px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 100px auto;
+        }
+        .ccc {
+            color: orange;
+            display: block;
+            height: 20px;
+            width: 200px;
+            background-color: #ccc;
+            text-align: center;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+        .sss {
+            display: none;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $(".ccc").click(function () {
+                $(this).next().show()
+                $(this).parent().siblings().find("div").hide()
+            })
+
+
+        })
+
+    </script>
+</head>
+<body>
+<div class="bbb">
+    <ul>
+        <li>
+            <span class="ccc">标签1</span>
+            <div class="sss">内容1</div>
+        </li>
+        <li>
+            <span class="ccc">标签2</span>
+            <div class="sss">内容2</div>
+        </li>
+        <li>
+            <span class="ccc">标签3</span>
+            <div class="sss">内容3</div>
+        </li>
+        <li>
+            <span class="ccc">标签4</span>
+            <div class="sss">内容4</div>
+        </li>
+        <li>
+            <span class="ccc">标签5</span>
+            <div class="sss">内容5</div>
+        </li>
+    </ul>
+
+</div>
+</body>
+</html>

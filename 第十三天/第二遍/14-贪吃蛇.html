@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #map {
+            width: 800px;
+            height: 600px;
+            position: relative;
+            background-color: #4ab5cf;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+</body>
+<script src="Food2.js"></script>
+<script src="Snake2.js"></script>
+<script src="game2.js"></script>
+<script>
+//    var map = document.getElementById("map")
+//    var food = new Food();
+//    food.render(map)
+//    var nake = new Snake();
+//    nake.render(map)
+    var mmp=document.getElementById("map");
+    var game = new Game(mmp);
+    game.start()
+
+</script>
+</html>

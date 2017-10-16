@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+
+    </style>
+    <title></title>
+    <script>
+        window.onload=function(){
+            var button = document.getElementsByTagName("button")[0];
+            var input = document.getElementsByTagName("input")[0];
+            button.onclick=function(){
+                if(this.innerHTML==="禁用"){
+                    this.innerHTML="填写";
+//                    button.disabled
+                }else{
+                    this.innerHTML="禁用"
+//                    button.className="input"
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<button><label for="cc">禁用</label></button>
+<input type="text"  id="cc">
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        button {
+            width: 90px;
+            height: 40px;
+            font-size: 18px;
+            margin: 20px;
+            cursor: pointer;
+            background: #ccc;
+        }
+    </style>
+    <script>
+    window.onload=function(){
+       var but =document.getElementsByTagName("button");
+        for(var i=0;i<but.length;i++){
+           but[i].onclick=function(){
+               for(var j= 0;j<but.length;j++){
+                   but[j].style.background="#ccc";
+               }
+               this.style.background= "red"
+           }
+        }
+
+
+
+    }
+    </script>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+</body>
+</html>

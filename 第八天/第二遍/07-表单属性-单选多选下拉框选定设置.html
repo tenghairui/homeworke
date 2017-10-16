@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload=function(){
+            var put = document.getElementsByTagName("input");
+            var opt = document.getElementsByTagName("option");
+            var but =document.getElementsByTagName("button");
+
+            but[0].onclick=function() {
+                for(var i=0;i<put.length;i++) {
+                    put[i].checked = false
+                }
+                    opt[1].selected = true;
+                    put[0].checked = true;
+                    put[2].checked = true;
+                    put[3].checked = true;
+                    put[7].checked = true;
+                    put[8].checked = true;
+
+                }
+                but[1].onclick=function(){
+                    for(var i=0;i<put.length;i++){
+                        put[i].checked=false;
+                    }
+                    opt[2].selected = true;
+                    put[1].checked = true;
+                    put[5].checked = true;
+                    put[6].checked = true;
+                    put[7].checked = true;
+                    put[8].checked = true;
+
+                }
+
+
+
+        }
+    </script>
+</head>
+<body>
+
+<button>男生</button>
+<button>女生</button><br><br>
+
+<!--如果两个都被选中，后面的把前门的层叠-->
+
+性别：<input type="radio" name="gender"/>男
+<input type="radio" name="gender"/>女<br><br>
+
+季节：
+<select name="" id="">
+    <option value="">春意盎然</option>
+    <option value="">夏日炎炎</option>
+    <option value="">秋风萧瑟</option>
+    <option value="">冬雪皑皑</option>
+</select><br><br>
+
+爱好：
+<input type="checkbox"/>抽烟
+<input type="checkbox"/>喝酒
+<input type="checkbox"/>烫头
+<input type="checkbox"/>逛街
+<input type="checkbox"/>购物
+<input type="checkbox"/>敲代码
+<input type="checkbox"/>生活不止眼前的苟且还有HTML和CSS和JS...
+
+
+</body>
+</html>

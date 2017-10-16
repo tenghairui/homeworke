@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var but=document.getElementsByTagName("button")[0];
+            var ul=document.getElementsByTagName("ul")[0];
+            var arr=["西施浣纱","贵妃醉酒","貂蝉拜月","昭君出塞"]
+            but.onclick=function(){
+                ul.innerHTML=""
+              for(var i=0;i<arr.length;i++){
+                  var li1=document.createElement("li");
+                  li1.innerHTML=arr[i];
+                  ul.appendChild(li1)
+              }
+                var aaa=ul.children;
+                for(var i=0;i<aaa.length;i++){
+                    aaa[i].onmouseover=function(){
+                        for(var j=0;j<aaa.length;j++){
+                            aaa[j].style.background=""
+                        }
+                        this.style.background="red"
+                    }
+                 }
+             }
+           }
+    </script>
+</head>
+<body>
+<button>生成四大美女...嘿嘿嘿...</button>
+<ul>
+
+
+</ul>
+</body>
+</html>

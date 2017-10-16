@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        @-webkit-keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        @-moz-keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        .wrap {
+            width: 1000px;
+            text-align: center;
+            margin: 100px auto 0;
+        }
+
+        .wrap h1 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+        }
+
+        .word {
+            font-weight: 700;
+        }
+
+        .typed-cursor {
+            opacity: 1;
+            -webkit-animation: blink .7s infinite;
+            -moz-animation: blink .7s infinite;
+            animation: blink .7s infinite;
+            display: none;
+        }
+
+        .saySection {
+            margin-top: 50px;
+        }
+
+        .saySection input {
+            font-size: 30px;
+        }
+
+        .saySection .txtSay {
+            padding-left: 10px;
+        }
+
+        .saySection .btnSay {
+            display: inline-block;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            var str ="红鲤鱼与绿鲤鱼与驴"
+
+            core(str)
+            //调用定时器
+//            定义一个定时器
+            function core (str){
+                var timer = null//开启一个定时器
+                var num = 0 //计数器
+                var newstr=""//定义一个新的字符串  让他一个一个添加进来
+                timer = setInterval(function () {
+                    if(num<str.length){//如果num<str的长度，不能超过str的长度
+                        newstr+=str[num];//才能根据里边的长度来添加到newstr
+                        $(".typed-cursor").show()
+                        $(".word").text(newstr)//再把这个newstr的东西添加到word里
+                        num++
+                    }else {
+                        clearInterval(timer)
+                        $(".typed-cursor").hide()
+                    }
+            },500)
+            }
+
+            $(".btnSay").click(function () {
+                var str=$("#inValue").val()//获取里边的内容
+                core(str)//调用赋值
+                $("#inValue").val("")//点击完里边的内容为空
+            })
+        })
+        
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <h1>
+        You want to say ： <span class="word"></span><span class="typed-cursor" >|</span> ！
+    </h1>
+
+    <div class="saySection">
+        <input type="text" id="inValue" class="txtSay">
+        <input type="button" value="Say" id="btnSay" class="btnSay">
+    </div>
+</div>
+
+</body>
+</html>

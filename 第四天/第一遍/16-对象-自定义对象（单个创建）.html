@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var stu = new Object()
+    stu.name ="郑爽";
+    stu.age = 18;
+    stu.study = function (){
+        console.log(this.name+"：我爱你");
+    }
+    console.log(stu.name)
+    console.log(stu.age)
+    console.log(stu.study)
+    console.log(stu)
+    stu.study()
+
+</script>
+</body>
+</html>

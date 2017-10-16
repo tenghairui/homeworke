@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //数组的遍历(最重要): 用for循环把数组中的每一个元素都获取到并可以逐一操作
+        var arr=[1,2,3,4,5]
+        for(var i=0;i<arr.length;i++){
+//            (数组的遍历要用for循环；；因为你的索引值从0开始，那么你的i就应该等于0，
+//                你的i不能超过数组中熟知的长度，所以只能小于arr.length，不能等于)
+            console.log(arr[i])
+//            （打印你的数组中每一个数）
+            arr[i]=arr[i]*100
+//            给你的数组中每一个数*100
+        }
+    console.log(arr)
+
+</script>
+</body>
+</html>

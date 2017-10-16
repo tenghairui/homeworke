@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload=function(){
+            var but = document.getElementsByTagName("button")[0];
+            var put = document.getElementsByTagName("input")[0];
+            but.onclick=function(){
+
+                if(this.innerHTML==="禁用"){
+                    put.disabled=true;
+                    this.innerHTML="启用";
+                }else if(this.innerHTML==="启用"){
+                    put.disabled=false;
+                    this.innerHTML="禁用";
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<button>禁用</button>
+<input type="text" value="我是input里面的内容"/>
+</body>
+</html>

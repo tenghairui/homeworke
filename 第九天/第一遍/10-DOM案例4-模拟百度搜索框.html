@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        div {
+            width: 500px;
+            margin: 200px auto;
+        }
+        input {
+            width: 380px;
+            height: 34px;
+            outline-style: none;
+            padding-left: 10px;
+            font-size: 18px;
+            float: left;
+        }
+        button {
+            width: 90px;
+            height: 38px;
+            float: right;
+        }
+        ul {
+            border: 1px dashed red;
+            border-top: 0;
+            float: left;
+            width: 372px;
+            padding: 10px;
+        }
+        ul li {
+            cursor: help;
+            font: 500 22px/28px "simsun";
+        }
+        ul li:hover {
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var div = document.getElementsByTagName("div")[0]
+            var input = div.children[0];
+            var arr = ["aaa","aa","aaaa","aaaf","aaefea","aafea","aawa","aegaa","abbaa","breaaa","qqaaa","hhaaa","rraaa","ttaaa","yyaaa","uuaaa","iiaaa","ooaaa",]
+            input.onkeyup=function(){
+                var newarr = []
+                for(var i=0;i<arr.length;i++){
+                    if(arr[i].indexOf(this.value)===0){
+                        newarr.push(arr[i]);
+                    }
+                }
+                var ul =document.createElement("ul");
+                if(div.children.length==3){
+                    div.removeChild(div.children[2])
+                }
+                if(newarr.length===0||this.value===""){
+                    return
+                }
+                for(var i=0;i<newarr.length;i++){
+                    var newli = document.createElement("li");
+                    newli.innerHTML=newarr[i];
+                    ul.appendChild(newli)
+                }
+                div.appendChild(ul)
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+
+<div class="box">
+    <input type="text"/>
+    <button>搜索</button>
+    <!--<ul>-->
+
+    <!--</ul>-->
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var arr=[4,5,7,22,54,9]
+    for(var j= 0;j<arr.length-1;j++){
+        for(var i=0;i<arr.length-1-j;i++){
+            if(arr[i]>arr[i+1]){
+                var teng = arr[i];
+                arr[i]=arr[i+1];
+                arr[i+1]=teng
+            }
+        }
+    }
+    console.log(arr)
+
+</script>
+</body>
+</html>

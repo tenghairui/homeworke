@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #F7F7F7;
+        }
+
+        .box {
+            width: 320px;
+            height: 400px;
+            margin: 10px auto;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        // 获取元素
+        var box = document.querySelector('.box');
+
+        // 创建元素 开始 结束
+        var startX, startY, endX, endY, startTime, endTime;
+        // 给box添加开始触屏事件,为了获取起点坐标
+        box.addEventListener('touchstart', function (e) {
+            var touches = e.targetTouches[0];
+
+            startX = touches.clientX;
+            startY = touches.clientY;
+
+            // 因为点击了长时间不会才会显示 所有进行改装,添加时间
+            startTime = new Date().getTime();
+        })
+        // 给box添加离开触屏事件，为了获取结束的坐标
+        box.addEventListener('touchend', function (e) {
+            endTime = new Date().getTime();
+
+
+            var touches = e.changedTouches[0];
+
+            endX = touches.clientX;
+            endY = touches.clientY;
+      
+
+        // 判断起始点的坐标和终止点的坐标的差值是否小于5 如果小于则为点击 
+        if (Math.abs(endX - startX) < 5 && Math.abs(endY - startY) < 5 && (endTime - startTime) < 300) {
+            alert("点击")
+        }
+
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        button {
+            width: 100px;
+            height: 50px;
+            margin: 20px;
+            font: 500 22px/50px "simsun";
+        }
+        .box1 {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            background-color: #eee;
+        }
+        .box2 {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+
+</head>
+<body>
+<button>200</button>
+<button>400</button>
+<div class="box1">
+    <div class="box2" id="box2">
+        忠厚传家久，诗书济世长...
+    </div>
+</div>
+<script>
+    var but=document.getElementsByTagName("button");
+    var box2 =document.getElementById("box2");
+    var timer = null;
+    but[0].onclick=function(){
+       timer= setInterval(function(){
+         box2.style.left=box2.offsetLeft+10+"px";
+            if(box2.offsetLeft===200){
+                clearInterval(timer)
+            }
+        },30)
+    }
+    but[1].onclick=function(){
+        timer=setInterval(function(){
+            box2.style.left=box2.offsetLeft+10+"px";
+            if(box2.offsetLeft===400){
+                clearInterval(timer)
+            }
+        },30)
+    }
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    // 创建一个Iphone 手机
+    // 属性： 颜色  价格 尺寸
+    // 方法：打电话  玩游戏   听歌
+        //构建函数
+        function Shouji(color,jiage,size){
+            this.color=color
+            this.jiage=jiage
+            this.size=size
+        }
+        Shouji.prototype.callphone= function () {
+            console.log("正在打电话")
+        }
+        Shouji.prototype.plangame= function () {
+            console.log("正在玩游戏")
+        }
+        Shouji.prototype.listmusic= function () {
+            console.log("正在听歌")
+        }
+        function ipad(color,jiage,size){
+            Shouji.call(this,color,jiage,size)
+        }
+        for(var arr in Shouji.prototype){
+            ipad.prototype[arr]=Shouji.prototype[arr]
+        }
+        ipad.prototype.constructor=Shouji
+        ipad.prototype.shipin= function () {
+            console.log("看视频")
+        }
+
+    var aaa = new Shouji("red",1000,4.5)
+    console.log(aaa.color)
+    aaa.callphone()
+        var bbb=new ipad("yellow",3000,5)
+    console.log(bbb.color)
+    console.log(aaa.color)
+</script>
+</body>
+</html>

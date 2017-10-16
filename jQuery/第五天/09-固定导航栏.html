@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        .main {
+            margin: 0 auto;
+            width: 1000px;
+            padding-top: 10px;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script src="./jquery-1.12.4.js"></script>
+    <script>
+        $(function () {  
+            $(window).scroll(function(){
+                if($(this).scrollTop()>=$(".top").outerHeight()){
+                    $(".nav").addClass("fixed");
+                    $(".top").css("margin-bottom",$(".nav").outerHeight());
+                }else {
+                    $(".nav").removeClass("fixed")
+                    $(".top").css("margin-bottom","")
+                }
+            })
+
+        })
+
+    </script>
+</head>
+<body>
+    <div class="top" id="topPart">
+        <img src="images/top.png" alt="">
+    </div>
+    <div class="nav" id="navBar" style="margin-bottom: 0px;">
+        <img src="images/nav.png" alt="">
+    </div>
+    <div class="main" id="mainPart">
+        <img src="images/main.png" alt="">
+    </div>
+    
+</body>
+</html>

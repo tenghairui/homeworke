@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    //建立匿名函数
+    (function (window){
+        //建立构建函数
+        function Fn(box){
+            this.sss=document.getElementById(box);
+            //构建函数清空数据
+            this.pagex=0;
+            this.pagey=0;
+            }
+        //原型
+        Fn.prototype.aaa= function (event) {
+            var that=this//将this赋值给that；
+            //将触动事件写在原型中
+            this.sss.onmousedown=function(event){
+                event=event||event;
+                //计算鼠标在盒子中的坐标
+                that.pagex=event.clientX-this.offsetLeft;
+                that.pagey=event.clientY-this.offsetTop;
+
+                //因为鼠标是在页面中移动。.盒子跟着鼠标的移动而移动；所以填写移动事件要给document，不能给this.sss
+                document.onmousemove= function (event) {
+                    that.fnmove(event)
+                }
+                document.onmouseup= function (event) {
+                    that.fnup(event)
+                }
+            }
+
+        }
+        Fn.prototype.fnmove= function (event) {
+            //赋值
+            this.sss.style.left=event.clientX-this.pagex+"px";
+            this.sss.style.top=event.clientY-this.pagey+"px"
+        }
+        //在鼠标弹起的时候解除事件
+        Fn.prototype.fnup= function (event) {
+            document.onmouseup=document.onmousemove=null
+        }
+        window.Fn=Fn
+
+    })(window)//调用出来，自己调自己
+
+    var bbb = new Fn("box");
+    bbb.aaa()
+
+</script>
+</body>
+</html>

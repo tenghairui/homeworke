@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var arr=[1,6,3,7,9,8]
+    var n=0;
+    var m=0;
+    for(j=0;j<arr.length;j++){
+        var bool = true;
+        for(i=0;i<arr.length;i++){
+            if(arr[i]>arr[i+1]){
+                var teng=arr[i];
+                 arr[i]=arr[i+1];
+                arr[i+1]=teng;
+                bool = false
+
+            }
+            n++
+        }
+        m++
+        if(bool){
+            break
+        }
+    }
+        console.log(arr)
+    console.log(n);
+    console.log(m)
+
+
+</script>
+</body>
+</html>

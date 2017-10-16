@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .red {
+            color: red;
+        }
+        .green {
+            color: green;
+        }
+    </style>
+
+</head>
+<body>
+账号：<input type="text" /><span></span>
+
+<script>
+    window.onload= function () {
+        var input =document.getElementsByTagName("input")[0];
+        var span =document.getElementsByTagName("span")[0];
+        input.onblur= function () {
+            var aaa= input.value
+           var re=/^[1-9]\d{10}$/
+            if(re.test(aaa)){
+                span.innerHTML="是电话号"
+            }else{
+              span.innerHTML="不是电话号"
+            }
+        }
+    }
+    
+    
+    
+</script>
+</body>
+</html>

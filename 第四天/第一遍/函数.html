@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //    1,1,2,3,5,8,13,21,34
+    //    var n1 =1;
+    //    var n2 =1;
+    //    var flag=3;
+    //
+    //    function fn(n){
+    //        var temp = n1;
+    //        n1=n1+n2;
+    //        n2=temp;
+    //        if(flag == n){
+    //            console.log(n1);
+    //            return;
+    //        }
+    //        flag++;
+    //        fn(n);
+    //    }
+    //
+    //    fn(6);
+    //  console.log(fn(12))
+    //    function fn(n) {
+    //        var n1 = 1;
+    //        var n2 = 1;
+    //        for (var i = 3; i <=n; i++) {
+    //            var temp = n2;
+    //            n2 = n2 + n1;
+    //            n1 = temp;
+    //        }
+    //        return n2
+    //    }
+    //1-n所有数的和；
+    //    var sum = 0;
+    //    console.log(fn(5))
+    //    function fn(n){
+    //        for(var i=0;i<=n;i++){
+    //            sum=sum+i
+    //        }
+    //        return sum
+    //    }
+
+    //        - 2.求n-m之间所有数的和
+    //            var sum = 0;
+    //            console.log(fn(12,13))
+    //            function fn(n,m){
+    //                for(var i=n;i<=m;i++){
+    //                    sum=sum+i;
+    //                }
+    //                return sum;
+    //            }
+    //        - 4.求2个数中的最大值
+    //                fn(1,2)
+    //
+    //            function fn(a,b){
+    //                if(a>b){
+    //                    console.log(a)
+    //                }else{
+    //                    console.log(b)
+    //                }
+    //            }
+
+    //1.判断一个数是否为质数
+    //    console.log(fn(5))
+    //            function fn(n){
+    //                for(var i=2;i<=n;i++){
+    /*让n这个数不停地除i余数等于0那就不是质数；如果没有等于0 那么i就要一直循环++ 到他本身为止；
+     所谓的质数就是只能被1或者本身整除的数*/
+    //                    if(n%2===0){
+    //                       return false;
+    //                    }
+    //                }
+    //                return true;
+    //            }
+    //    翻转数组，返回一个新数组
+    //    var arr=[1,2,3,4,5,6]
+    //    console.log(fn(arr))
+    //    function fn(arr) {
+    //        var newarr=[]
+    //        for (var i=arr.length-1;i>=0;i--){
+    //            newarr[newarr.length]=arr[i]
+    //        }
+    //        return newarr
+    //    }
+    //输入某年某月某日，判断这一天是这一年的第几天？
+    //        function fn(year,yue,ri){
+    //            var arryue = [31,28,31,30,31,30,31,31,30,31,30,31]
+    //            var sum = sum+day;
+    //            for(var i=0;i<yue-1;i++){
+    //                day=day+yue[i];
+    //            }
+    //            if(year%3===0){
+    //
+    //            }
+    //        }
+    //  fn(2001)
+    //    function fn(y){
+    //
+    //        if(y%4===0&&y%100!=0||y%400===0){
+    //           alert("闰年")
+    //        }else{
+    //           alert("平年")
+    //        }
+    //        return
+    //    }
+    //    var year = Number(prompt("请输入年份:"));
+    //    var month = Number(prompt("请输入月份:"));
+    //    var day = Number(prompt("请输入号:"));
+    //
+    //    alert("该天是当年的第" + days(year, month, day) + "天");
+    //
+    //    function days(year, month, day) {
+    //        var days = 0;
+    //        var arr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    //        for (var i = 0; i < month - 1; i++) {
+    //            days += arr[i];
+    //        }
+    //        if ((year % 4 === 0 && year % 100 === 0 || year % 400 === 0) && month > 2) {
+    //            days++;
+    //        }
+    //        days = days + day;
+    //        return days;
+    //    }
+    //var year = Number(prompt("你好吗"))
+    //    var yue = Number(prompt("你好吗"))
+    //    var day = Number(prompt("你好吗"))
+    //    alert(fn(year,yue,day))
+    //    function fn(year,yue,day){
+    //        var days=0;
+    //        var arr=[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    //        for(var i=0;i<yue-1;i++){
+    //            days=days+arr[i];
+    //        }
+    //        if ((year % 4 === 0 && year % 100 === 0 || year % 400 === 0) && yue > 2) {
+    //            days++
+    //        }
+    //        days=days+day;
+    //        return days
+    //    }
+
+    alert(fn(2))
+    function fn(n) {
+        var sum = 2;
+        var n1 = 1;
+        n2 = 1;
+        if(n==1){
+            sum=1
+            return sum;
+        }
+        for (var i = 3; i <= n; i++) {
+            var temp = n2;
+            n2 = n1 + n2;
+            n1 = temp;
+            sum=sum+n2
+        }
+
+        return sum
+    }
+
+
+</script>
+</body>
+</html>

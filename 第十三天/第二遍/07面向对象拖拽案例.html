@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+
+    //先创建匿名函数
+    (function(window){
+        //创建构造函数
+        function Fn(box){
+            this.obj=document.getElementById(box);
+            this.disx = 0;
+            this.disy=0
+        }
+        //原型
+        Fn.prototype.aaa= function () {
+            var that=this;
+            this.obj.onmousedown= function (event) {
+                event=event||event;
+                //获取鼠标在盒子中的坐标；鼠标在页面中好的坐标-盒子的坐标；因为在原型中所以指向的食物不同。所以用已经拟好变量的thit实现
+                //clientx兼容比较好，所以直接用client就好了  ，不需要用page获取坐标
+                that.disx=event.clientX-this.offsetLeft;
+                that.disy=event.clientY-this.offsetTop;//这里的that指向的是外边的Fn（box)。而这里的this指向的是原型
+
+                document.onmousemove= function (event) {//给他规定一个函数，随时可以调用
+                    event=event||event;
+                    that.aamove(event)  //这里的that也是指向的外边的Fn（box）；
+                }
+
+                document.onmouseup=function(event){
+                    event=event||event;
+                    that.aaup(event);
+                }
+
+            }
+
+        }
+        Fn.prototype.aamove= function (event) {
+            event=event||event;
+
+            //开始进行赋值,鼠标在页面中的坐标-盒子中的坐标
+            this.obj.style.left=event.clientX-this.disx+"px";
+            this.obj.style.top=event.clientY-this.disy+"px";
+
+        }
+        //鼠标弹起取消所有事件；
+        Fn.prototype.aaup=function(event){
+            event=event||event;
+           document.onmousemove=document.onmouseup=null
+        }
+window.Fn=Fn
+
+    })(window)
+
+    var bbb = new Fn("box");
+    bbb.aaa()
+
+</script>
+</body>
+</html>

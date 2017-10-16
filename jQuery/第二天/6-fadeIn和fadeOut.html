@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .aa {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: none;
+        }
+    </style>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $("input:eq(0)").click(function () {
+                $(".aa").fadeIn(1000,function(){
+                    $(".aa").fadeOut(1000)
+                })
+            })
+            $("input:eq(1)").click(function () {
+                $(".aa").fadeOut(400)
+            })
+            $("input").eq(2).click(function () {
+                $(".aa").fadeToggle(500)
+            })
+        })
+
+    </script>
+</head>
+<body>
+<input type="button" value="淡入" />
+<input type="button" value="淡出" />
+<input type="button" value="淡入淡出切换" />
+<div class="aa"></div>
+</body>
+</html>

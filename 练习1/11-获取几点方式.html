@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" id="box" name="box"></div>
+    <script>
+        //获取节点的六种方式
+        var box = document.getElementById('box');//通过id过去节点
+        var box = document.getElementsByTagName('div')[0]//通过标签名获取节点
+        var box = document.getElementsByName('box')[0]//通过name属性获取节点
+        var box = document.getElementsByClassName('box')[0]//通过类名获取节点
+        var box = document.querySelector('.box')//模拟css选择器 只选择一个
+        var box = document.querySelectorAll('.box')//模拟css选择器  选择全部这个名字的节点
+
+
+    </script>
+</body>
+</html>

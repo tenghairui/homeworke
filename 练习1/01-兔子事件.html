@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1,1,2,3,5,8,13
+        // var a1=1
+        // var a2 =1
+        // for(var i=3;i<=10;i++){
+        //     var mup = a2
+        //     a2 =  a1+a2
+        //     a1=mup
+
+        // }
+        // console.log(a2)
+        
+            //封装成函数
+        function fn(n) {
+            var n1 = 1;
+            var n2 = 1 
+            for(var i =3;i<=n;i++){
+                var mup = n2;
+                n2 = n1+n2;
+                n1 = mup
+            }
+            return n2
+        }
+        console.log(fn(100))
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 350px;
+            height: 350px;
+            margin: 100px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+
+        .big {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 360px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            display: none;
+        }
+
+        .mask {
+            width: 175px;
+            height: 175px;
+            background: rgba(255, 255, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: move;
+            display: none;
+        }
+
+        .small {
+            position: relative;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+    </style>
+    <script src="jquery1.11.1-min.js"></script>
+    <script>
+        window.onload=function(){
+            var box = document.getElementById("box");
+            var mask = document.getElementById("mask");
+            var small = document.getElementById("small");
+            var big = document.getElementById("big");
+            var img = big.getElementsByTagName("img")[0];
+
+            small.onmouseenter=function(){
+                show(mask);
+                show(big)
+            }
+            small.onmouseleave=function(){
+                hide(mask);
+                hide(big)
+            }
+            mask.onmousemove=function(event){
+                var event=event||window.event;
+                //获取鼠标在页面中的坐标
+                var pagex=event.pageX||event.clientX+scrollLeft();
+                var pagey=event.pageY||event.clientY+scrollTop();
+                //获取小盒子在页面的坐标
+                var smallx =small.offsetLeft+box.offsetLeft;//因为父盒子有定位  所以想要获取小盒子在页面中的坐标，那就要加上父盒子在页面中的坐标。
+                var smally=small.offsetTop+box.offsetTop;//因为父盒子的大小和小盒子的大小一样，所以small.oddsetleft/top=0;所以也可以直接获取父盒子的坐标也可以
+                //获取鼠标在盒子中的坐标:用鼠标在页面中的坐标-小盒子在页面中的坐标-黄盒子在页面的坐标
+                var x =pagex-smallx-mask.offsetWidth/2
+                var y =pagey-smally-mask.offsetHeight/2
+
+                if(x<0){
+                    x=0
+                }
+                if(x>small.offsetWidth-mask.offsetWidth){
+                    x=small.offsetWidth-mask.offsetWidth
+                }
+                if(y<0){
+                    y=0
+                }
+                if(y>small.offsetHeight-mask.offsetHeight){
+                   y= small.offsetHeight-mask.offsetHeight
+                }
+                //赋值给黄盒子
+                mask.style.left=x+"px";
+                mask.style.top=y+"px"
+
+
+                //bili1=大盒子/大图片=小盒子/黄盒子   大的/大的。小的/小得
+                var bili1 = img.offsetWidth/small.offsetWidth
+                var xx = x*bili1
+                var yy = y*bili1
+
+                img.style.left=-xx+"px";
+                img.style.top=-yy+"px"
+
+            }
+
+
+        }
+
+    </script>
+</head>
+<body>
+<div class="box" id="box">
+    <!--左侧盒子-->
+    <div class="small" id="small">
+        <img src="images/001.jpg" alt=""/>
+        <!--黄盒子-->
+        <div class="mask" id="mask"></div>
+    </div>
+    <!--右侧盒子-->
+    <div class="big" id="big">
+        <!--大图片-->
+        <img style="position: absolute;" src="images/0001.jpg" alt=""/>
+    </div>
+</div>
+
+</body>
+</html>

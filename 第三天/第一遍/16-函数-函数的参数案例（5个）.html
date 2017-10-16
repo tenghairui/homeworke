@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //          1.求1-n之间所有数的和
+//                    fn(100)
+//                    function fn(n){
+//                        var sum=0;
+//                        for(var i=0;i<=n;i++){
+//                            sum=sum+i
+//                        }
+//                        alert(sum)
+//                    }
+    //        - 2.求n-m之间所有数的和
+//                    aa(1,100)
+//                    function aa(n,m){
+//                        var sum =0
+//                        for(var n=0;n<=m;n++){
+//                            sum=sum+n
+//                        }
+//                        alert(sum)
+//                    }
+    //        - 3.圆的面积
+//                    pai*r*r
+//    aa(1)
+//                function aa(r){
+//                    var yuan = 3.14*r*r
+//                    alert(yuan)
+//                }
+    //        - 4.求2个数中的最大值
+//    aa(1,2)
+//                function aa(a,b){
+//                    if(a>b){
+//                        alert(a)
+//                    }else{
+//                            alert(b)
+//                    }
+//                }
+
+    //        - 5.求3个数中的最大值
+            aa(1,2,3)
+            function aa(a,b,c) {
+                //思路：两两比较之后，大的在和第三个数比较；
+                if (a > b) {
+                    alert(a)
+                    if (a > c) {
+                        alert(a);
+                    } else {
+                        alert(c);
+                    }
+                } else {
+                    //大的在和c比较
+                    if (b > c) {
+                        alert(b);
+                    } else {
+                        alert(c);
+                    }
+                }
+            }
+
+
+
+</script>
+</body>
+</html>

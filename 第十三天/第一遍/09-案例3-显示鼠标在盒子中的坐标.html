@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            display: block;
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            text-align: center;
+            line-height: 100px;
+            margin: 100px;
+            cursor: pointer;
+        }
+
+    </style>
+    <script src="jquery1.11.1-min.js"></script>
+    <script>
+        window.onload=function(){
+            //需求：鼠标在box中移动，显示鼠标在box中的坐标;
+            //算法：  鼠标在盒子中的坐标 = 鼠标在页面的坐标 - 盒子在页面的坐标;
+
+            var box = document.getElementsByTagName("div")[0];
+
+            box.onmousemove=function(event){
+                var event=event||window.event;
+                //获取鼠标在页面中的高度；
+                var pagex = event.pageX||event.clientX+scrollLeft();
+                var pagey = event.pageY||event.clientY+scrollTop();
+                //获取盒子在页面中的坐标
+                var boxx = box.offsetLeft;
+                var boxy = box.offsetTop;
+                //鼠标在box的坐标
+                var x =pagex-boxx;
+                var y =pagey-boxy;
+
+                box.innerHTML="鼠标在box的横坐标为"+x+""+"<br>"+"鼠标在box的纵坐标为"+y+""
+
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div class="box"></div>
+
+</body>
+</html>

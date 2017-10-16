@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+
+
+    //1.二维数组，三维数字.......
+    //    var arr = [[1,2,3],[4,5,6],[7,8,9]];
+    //    console.log(arr);
+    //    console.log(arr[1][1]);
+
+
+    //2.可以用数组的长度做数组中不存在的下一项进行赋值;
+//    var arr = [111,222,333];
+    //    arr[arr.length] = "aaa";
+//    //    console.log(arr);
+//var  arr=[122,223,334]
+//    console.log(arr)
+//    arr[1]="wo"
+//    console.log(arr)
+//        var arr=["A","18","大一"]
+//    var arr1=["B","18","大一"]
+//    var arr2=["C","18","大二"]
+//   console.log(arr,arr1,arr2[2]="大一")
+    //       1.求一组数中的所有数的和和平均值
+//                var arr=[1,2,3]
+//                var sum = 0;
+//                for(var i=0;i<arr.length;i++){
+//                    sum=sum+arr[i]
+//                }
+//                 alert(sum)
+
+    //        2.求一组数中的最大值和最小值，以及所在位置
+//                var arr=[2,4,5]
+//                var max=0
+//                for(var i=0;i<arr.length;i++){
+//                    if(max<arr[i]){
+//                        max=arr[i]
+//                    }
+//                }
+//                 alert(max)
+//    var arr=
+    //        3.将字符串数组用|或其他符号分割
+    //        4.要求将数组中的0项去掉，将不为0的值存入一个新的数组，生成新的数组
+//        var arr=[5,6,2,1,4,9,8]
+
+    //利用一个for循环，很多轮的比较(元素个数-1轮);
+
+//    for(var i=0;i<arr.length-1;i++){
+//
+//            //某一轮过程中，比较的次数；（元素个数-1次）
+//
+//            for(var j=0;j<arr.length;j++){
+//                if(arr[j]>arr[j+1]){
+//                   var a = arr[j] ;
+//                    arr[j]=arr[j+1];
+//                    arr[j+1]=a
+//                }
+//            }
+//        }
+//    console.log(arr)
+//    var n1 = 0
+//    var n2 = 0
+//    var arr=[1,2,3,4,5,6,]
+//    for(var j=0;j<arr.length-1;j++){
+//            var bool = true;
+//        for(var i=0;i<arr.length-1-j;i++){
+//            if(arr[i]>arr[i+1]){
+//             var   flag=arr[i];
+//                arr[i]=arr[i+1]
+//                arr[i+1]=flag
+//                bool = false
+//
+//            }
+//            n2++
+//
+//        }
+//        n1++
+//    }
+//
+//    console.log(arr)
+//    console.log(n1)
+//    console.log(n2)
+            var a = 1;
+            var b= 1;
+            for(i=3;i<=12;i++){
+                var c=b;
+                b=a+b;
+                a=c
+            }
+        alert(b)
+</script>
+</body>
+</html>

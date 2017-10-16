@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //    function Car(color,price,brand){
+    //        this.brand = brand;
+    //        this.price = price;
+    //        this.color = color;
+    //    }
+    //    Car.prototype = {
+    //        constructor:Car,
+    //        yexing:function(){
+    //           console.log(this.color+"好好玩")
+    //        },
+    //        yueye:function(){
+    //
+    //        }
+    //    }
+    //    var bbb = new Car("红色","呵呵","哈哈")
+    //    bbb.yexing()
+
+
+    function Car(color, price, brand) {
+        this.color = color;
+        this.price = price;
+        this.brand = brand;
+    }
+    Car.prototype = {
+        constructor: Car,//不能用分号  只能用逗号  因为是键值对
+        yexing: function () {
+            console.log(this.color + "haohao完")
+        }
+    }
+    var a1 = new Car("红色","好看","好玩")
+    a1.yexing()
+
+
+</script>
+</body>
+</html>

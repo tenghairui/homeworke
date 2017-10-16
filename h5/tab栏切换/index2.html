@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tab栏切换</title>
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          background-color: #F7F7F7;
+        }
+    
+        .tabs {
+          width: 400px;
+          margin: 30px auto;
+          background-color: #FFF;
+          border: 1px solid #C0DCC0;
+          box-sizing: border-box;
+        }
+    
+        .tabs nav {
+          height: 40px;
+          text-align: center;
+          line-height: 40px;
+          overflow: hidden;
+          background-color: #C0DCC0;
+          /* 伸缩盒模型 */
+          display: flex;
+        }
+    
+        nav a {
+          display: block;
+          width: 100px;
+          border-right: 1px solid #FFF;
+          color: #000;
+          text-decoration: none;
+        }
+    
+        nav a:last-child {
+          border-right: none;
+        }
+    
+        nav a.active {
+          background-color: #9BAF9B;
+        }
+    
+        .cont {
+          overflow: hidden;
+          display: none;
+        }
+    
+        .cont ol {
+          line-height: 30px;
+        }
+      </style>
+</head>
+<body>
+    <div class="tabs">
+        <nav>
+          <a href="javascript:;" data-cont="local" class="active">国内新闻</a>
+          <a href="javascript:;" data-cont="global">国际新闻</a>
+          <a href="javascript:;" data-cont="sports">体育新闻</a>
+          <a href="javascript:;" data-cont="funny">娱乐新闻</a>
+        </nav>
+        <section class="cont" id="local" style="display:block">
+          <ol>
+            <li>河感在生矿难，死伤在全10</li>
+            <li>禽流感在感在广1处继续蔓延，温家宝指示</li>
+            <li>南方大旱，农作物减产绝收面积上亩</li>
+            <li>猪流感在广在全国暴发</li>
+            <li>禽流感在全国多处继续蔓延，温家宝指示</li>
+            <li>南方大旱，农作物减产绝收面积上亩</li>
+            <li>猪流感在广东群体性暴发</li>
+          </ol>
+        </section>
+        <section class="cont" id="global">
+          <ol>
+            <li>河南再次发生矿难，死伤人数超过100</li>
+            <li>禽流感次发生蔓延，温家宝指示</li>
+            <li>南方大旱，农作物减产绝收面积上亩</li>
+            <li>猪流感在广减产绝收发</li>
+            <li>禽流感在全国多作物减产绝收面积上亩</li>
+            <li>猪流感在广东群体性暴发</li>
+          </ol>
+        </section>
+        <section class="cont" id="sports">
+          <ol>
+            <li>河南再次发生矿难，死伤人数超过100</li>
+            <li>禽流感在全国多处农作物农延，温家宝指示</li>
+            <li>南方大旱，农作物减产绝收面积上亩</li>
+            <li>猪流感在广东群体性暴发</li>
+            <li>禽流感在全农作物继续蔓延，温家宝指示</li>
+            <li>南方大农作物减产绝收面积上亩</li>
+            <li>猪流感在广东群体性暴发</li>
+          </ol>
+        </section>
+        <section class="cont" id="funny">
+          <ol>
+            <li>河南再次发生矿难，死伤人数超过100dddads</li>
+            <li>禽流感在全国物农延，温家宝指示</li>
+            <li>南方大旱，农作物减产绝收面积上亩</li>
+            <li>猪流感在广东群体性暴发</li>
+            <li>禽流感在全农作物继续蔓延，温家宝指示</li>
+            <li>猪流感在广东群体性暴发</li>
+          </ol>
+        </section>
+      </div>
+      <script>
+          //获取所有点击的a标签
+          var aaa = document.querySelectorAll('a');
+          //循环遍历a标签
+          for (var i = 0; i < aaa.length; i++) {
+            //   给每个a标签点击事件
+            aaa[i].onclick=function(){
+                // 获取带有active类的a标签
+                var active = document.querySelector('.active');
+                // 获取带有active类的自定义属性值
+                var cont = active.dataset.cont;
+                //通过获取到的自定义属性得值来找到对应的section再进行隐藏
+                document.getElementById(cont).style.display="none";
+                // 在进行自身删除属性
+                active.classList.remove('active');
+                //点击那个给那个添加类active
+                this.classList.add('active');
+                //获取当前a标签的自定义属性的值
+                var ccc = this.dataset.cont;
+                // 获取当前点击的那个section，再进行显示
+                document.getElementById(ccc).style.display="block";
+            }
+              
+          }
+      </script>
+</body>
+</html>

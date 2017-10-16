@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul {
+            position: relative;
+        }
+        #box {
+            width: 771px;
+            height: 245px;
+            margin: 50px auto;
+            position: relative;
+        }
+        ul li {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #olli {
+            position: absolute;
+            left: 30px;
+            bottom: 10px;
+        }
+        #olli li {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: orange;
+            margin-right: 10px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        #olli .red {
+            background-color: red;
+        }
+    </style>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $("#olli li").mouseenter(function () {
+                var idx =$(this).index()
+                $("ul li").eq(idx).fadeIn(500).siblings().fadeOut(500)
+                $(this).addClass("red").siblings().removeClass("red")
+                num =idx
+            })
+//            让他自己走起来
+            //定义一个变量 相当于一个定时器  让他从0走到3 循环执行
+            var num = 0
+//            定义一个定时器
+            var timer =null
+//            开启定时器
+            function autoplay(){
+//                每隔一段时间  让数字自动增加
+                num++
+//                进行判断  当num加到4时，让他变为0
+                if(num>$("#olli li").length-1){
+                    num=0
+                }
+            $("#olli li").eq(num).addClass("red").siblings().removeClass("red")
+                $("ul li").eq(num).fadeIn(500).siblings().fadeOut(500)
+            }
+            timer = setInterval(autoplay,1500)
+            $("#box").mouseenter(function () {
+                clearInterval(timer)
+            })
+            $("#box").mouseleave(function () {
+                timer=setInterval(autoplay,1500)
+            })
+        })
+
+
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li style="display: block;"><a href="#"><img src="images/1.jpg" alt="" /></a></li>
+        <li><a href="#"><img src="images/2.jpg" alt="" /></a></li>
+        <li><a href="#"><img src="images/3.jpg" alt="" /></a></li>
+        <li><a href="#"><img src="images/4.jpg" alt="" /></a></li>
+    </ul>
+    <ol id="olli">
+        <li class="red">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img {
+            width: 114px;
+            height: 104px;
+            position: absolute;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+            width: 5000px;
+            height: 5000px;
+        }
+    </style>
+    <script src="jquery1.11.1-min.js"></script>
+    <script>
+        window.onload=function(){
+            //需求：鼠标在文档上移动，小天使就跟随移动;
+            //思路：获取鼠标在页面上的坐标，赋值给小天使，用鼠标移动事件;
+            //有了鼠标移动事件(onmousemove)，一般会替代定时器一部分功能；
+
+            var img = document.getElementsByTagName("img")[0]
+
+            document.onmousemove=function(event){
+                var event=event||window.event//获取鼠标坐标  兼容写法；
+                var pagex=event.pageX||event.clientX+scrollLeft();
+                var pagey=event.pageY||event.clientY+scrollTop();
+
+                img.style.left=pagex-img.offsetWidth/2+"px";//鼠标的坐标-图片的坐标除2那就使图片中间
+                img.style.top=pagey-img.offsetHeight/2+"px"//鼠标的坐标-图片的坐标除2那就使图片中间
+
+            }
+        }
+    </script>
+</head>
+<body>
+<img src="images/img2.png" alt=""/>
+
+</body>
+</html>

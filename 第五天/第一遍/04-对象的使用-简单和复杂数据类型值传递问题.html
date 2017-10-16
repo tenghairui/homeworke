@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //    简单数据类型传数
+    var aaa = 111;
+    bbb = aaa;
+    aaa = 222;
+    console.log(aaa);
+    console.log(bbb)
+    //    复杂数据类型显示地址
+    var stu1 = new Aaa("lisi",18);
+    var stu2 = stu1
+    stu1.name = "zhangsan"
+    console.log(stu1);
+    console.log(stu2);
+    console.log()
+    function Aaa(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+
+</script>
+</body>
+</html>

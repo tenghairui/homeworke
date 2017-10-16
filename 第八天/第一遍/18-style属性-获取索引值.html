@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        button {
+            width: 90px;
+            height: 40px;
+            font-size: 18px;
+            margin: 20px;
+            cursor: pointer;
+            background: #ccc;
+        }
+    </style>
+    <script>
+       window.onload=function(){
+           var but=document.getElementsByTagName("button");
+           for(var i=0;i<but.length;i++){
+               but[i].aaa=i
+               but[i].onclick=function(){
+                alert(this.aaa)
+               }
+           }
+       }
+
+    </script>
+</head>
+<body>
+<button title="0">按钮1</button>
+<button title="1">按钮2</button>
+<button title="2">按钮3</button>
+<button title="3">按钮4</button>
+<button title="4">按钮5</button>
+</body>
+</html>

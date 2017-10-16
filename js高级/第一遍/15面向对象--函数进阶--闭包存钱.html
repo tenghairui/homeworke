@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //用闭包存钱
+    function bank(money){
+        
+        return function (m) {
+            if(m<0&&(money+m)<0){
+                return alert("您的余额不足")
+            }
+            money=money+m
+            return alert("现在的余额为"+money)
+        }
+
+    }
+var ATM = bank(1000)
+    ATM(500)
+    ATM(-1000)
+    ATM(-800)
+
+</script>
+</body>
+</html>

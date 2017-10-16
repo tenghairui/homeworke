@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+        //if的五个案例
+
+
+        //    1.求两个数的最大数
+//            var a =3
+//            var b =4
+//            if(a>b){
+//                alert(a)
+//            }else if(a<b){
+//                alert(b)
+//            }
+        //    2.判断一个数是偶数还是奇数
+//            var a =4;
+//            if(a%2===0){
+//                alert("偶数")
+//            }else{
+//                alert("奇数")
+//            }
+        //    3.分数转换，把百分制转换成ABCDE   <60  E  60-70 D  70-80 C  80-90 B  90 - 100 A
+//                var a =77
+//                if(a>=90){
+//                    alert("A")
+//                }else if(a>=80){
+//                    alert("B")
+//                }else if(a>=70){
+//                    alert("C")
+//                }
+        //    4.判断一个年份是闰年还是平年
+//            var a =400;
+//            if(a%4===0&&a%100!=0||a%400===0){
+//                alert("闰年")
+//            }else{
+//                alert("平年")
+//            }
+        //        闰年：能被4整除，但不能被100整除的年份 或者 能被400整除的年份
+        //    5.判断一个人的年龄是否满18岁(是否成年)
+//                var a=15
+//        var cc= a>=18?"成年":"wei"
+//        alert(cc)
+
+
+//                switch的1个案例
+
+        //2.根据月份输出四季；(123春；....)
+//            var a=5
+//            switch(a){
+//                case a=2:
+//                    alert("chun")
+//                case a=5:
+//                    alert("xia")
+//            }
+            //while的五个案例
+        //        打印1-100之间每一个数
+//                var a=1
+//                while(a<=100){
+//                    console.log(a)
+//                    a++
+//                }
+        //        打印1-100之间的和
+//        var a =1
+        //        var sum=0
+        //        while(a<=100){
+        //            sum=sum+a
+        //            a++
+        //        }
+        //        console.log(sum)
+        //        打印100以内 7的倍数
+//            var a =1;
+//            while(a<=100){
+//                if(a%7===0){
+//                    console.log(a)
+//                }
+//                a++
+//            }
+        //        打印100以内所有偶数
+//        var a=1;
+//        while(a<=100){
+//            if(a%2===0){
+//                console.log(a)
+//            }
+//            a++
+//        }
+        //        打印100以内所有偶数的和
+//            var a=1;
+//            var sum=0;
+//            while(a<=100){
+//                if(a%2===0){
+//                    sum=sum+a
+//                }
+//                a++
+//            }
+//            console.log(sum)
+
+//            do....while的五个案例
+        //        1.求100以内所有3的倍数的和
+//                var a=1;
+        //                var sum=0;
+        //                do{
+        //                    if(a%3===0){
+        //                        sum=sum+a
+        //                    }
+        //                    a++
+        //                }while(a<=100)
+        //                console.log(sum)
+        //        2.使用do-while循环：输出询问“我爱你，嫁给我吧？”，选择“你喜欢我吗？(y/n):"，如果输入为y则打印”我们形影不离“，若输入为n,则继续询问
+//                var a = prompt("我爱你","嫁给我吧")
+//                     do{
+//                    var b =confirm("你喜欢我妈")
+//                         if(b==true){
+//                             console.log("不离不弃")
+//                         }
+//
+//             }while(!b)
+           // for循环五个案例
+        //        1.打印1-100之间所有数
+//                    for(var a =1;a<=100;a++){
+//                        console.log(a)
+//                    }
+        //        2.求1-100之间所有数的和
+//                    for(var a = 1,sum=0;a<=100;a++){
+//                        sum=sum+a
+//                    }
+//        console.log(sum)
+        //        3.求1-100之间所有数的平均值
+//                    for(var a= 1,sum= 0,arg;a<=100;a++){
+//                    sum=sum+a
+//
+//        }
+//            arg=sum/(a-10)
+//            console.log(arg)
+        //        4.求1-100之间所有偶数的和
+//                for(var a= 1,sum=0;a<=100;a++){
+//                if(a%2===0){
+//                    sum=sum+a
+//                }
+//        }
+//        console.log(sum)
+        //        5.同时求1-100之间所有偶数和奇数的和
+//                for(var a=1,sum=0,e=0;a<=100;a++){
+//                    if(a%2===0){
+//                        sum=sum+a
+//                    }else{
+//                        e=e+a
+//                    }
+//        }
+//        console.log(sum)
+//        console.log(e)
+
+
+
+//            for循环下三个案例
+        //1.打印一个正方形;
+//        var c=""
+//            for(var a=1;a<=9;a++){
+//                for(var b=1;b<=9;b++){
+//                    c=c+"★"
+//                }
+//
+//                c=c+"\r\n"
+//            }
+//        console.log(c)
+        //2.打印一个三角形;
+//            var a=""
+//            for(var i=1;i<=9;i++){
+//                for(var j=1;j<=i;j++){
+//                    a=a+"★"
+//                }
+//                a=a+"\r\n"
+//            }
+//        console.log(a)
+        //3.打印九九乘法表;
+//    var a=""
+//    for(i=1;i<=9;i++){
+//        for(var j=1;j<=i;j++){
+//            a=a+i+"*"+j+"="+j*i+""
+//        }
+//        a=a+"\r\n"
+//    }
+//    console.log(a)
+
+
+//        break;   用法案例
+        //    continue;   用法 案例
+
+        //    1.求整数1～100的累加值，但要求碰到个位为3的数则停止累加
+//                for(var a= 1,sum=0;a<=100;a++){
+//                    if(a%10===3){
+//                    (a除10的余数是3)
+//                        break
+//                    }
+//                    sum=sum+a
+//                }
+//        console.log(sum)
+
+        //    2.求整数1～100的累加值，但要求跳过所有个位为3的数
+                for(var a=1,sum=0;a<=100;a++){
+                    if(a%10===3){
+                        continue;
+                    }
+                        sum=sum+a
+                }
+    console.log(sum)
+
+
+
+</script>
+</body>
+</html>

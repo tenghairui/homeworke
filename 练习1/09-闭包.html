@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function func() {
+            var num = 123;
+            return function () {
+                return num;
+            };
+        }
+
+        //var f = func();//执行出来的为return出来的函数体 
+        var f = func()();//执行出来的是第二个函数return出来的值
+        console.log(f);
+
+    </script>
+</body>
+</html>

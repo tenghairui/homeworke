@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var aaa = {"width":"100px","height":"100px"}
+    /*和单个object构造一样，同样都是花括号，但是里边的属要用引号括起来，让他属性本身变成字符串，而object不需要用引号，
+    object的属性可以用数字表示，而json不可以；*/
+    console.log(aaa)
+    for(k in aaa){
+        console.log(k)
+        console.log(aaa[k])
+    }
+
+
+</script>
+</body>
+</html>

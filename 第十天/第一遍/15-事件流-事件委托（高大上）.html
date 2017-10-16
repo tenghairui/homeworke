@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li {
+            font: 500 22px/35px "simsun";
+            margin: 3px;
+            cursor: pointer;
+            background-color: skyblue;
+        }
+        span {
+            background-color: pink;
+            cursor: move;
+        }
+        .current {
+            background-color: lightgreen;
+        }
+        ul {
+            background: #ccc;
+        }
+    </style>
+    <script>
+        window.onload= function () {
+            var but=document.getElementsByTagName("button")[0];
+            var ul =document.getElementsByTagName("ul")[0];
+            but.addEventListener("click",function(){
+                var li = document.createElement("li");
+                li.innerHTML="我是小li";
+                li.style.background="red"
+                ul.appendChild(li);
+
+            })
+
+
+        }
+    </script>
+
+</head>
+<body>
+
+<button>创建li标签</button>
+
+<ul>
+    <li>我是原生土著li</li>
+    <span>我是span</span>
+    <li>我是原生土著li</li>
+    <span>我是span</span>
+    <li>我是原生土著li</li>
+</ul>
+
+</body>
+</html>

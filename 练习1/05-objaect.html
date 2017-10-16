@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function setAge(obj){
+        //     obj.age = 18
+        // }
+        // var person = new Object();
+        // person.age = 30;//打印的自身的年龄
+        // console.log(person.age);//30
+        // setAge(person);//函数调用 所以引用的值是函数里边的 所以为18
+        // console.log(person.age);//18
+
+        function setName(obj) {
+            obj.name = "小明";
+            obj = new Object();
+            obj.name = "小红";
+        }
+
+        var person = new Object();
+        person.name = "Jack";
+
+        setName(person);
+        console.log(person.name); // 小明
+
+    </script>
+</body>
+</html>

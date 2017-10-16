@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        button {
+            width: 100px;
+            height: 40px;
+            font-size: 20px;
+        }
+        div.tt {
+            display: block;
+            height: 300px;
+            width: 300px;
+            font-size: 22px;
+            background-color: pink;
+        }
+        div.aa{
+            display: none!important;
+          /*  定义让div隐藏起来*/
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var div = document.getElementById("tt");
+            //获取div节点
+            var ww = document.getElementsByTagName("button")[0]
+            //获取按钮节点
+            ww.onclick=function(){
+                if(this.innerHTML==="隐藏"){
+                    //点击隐藏；
+                    this.innerHTML="显示"//文字转成显示
+                    div.className="aa"//同时div隐藏；
+                }else{
+                    this.innerHTML="隐藏";//文字显示的隐藏
+                    div.className="tt"//div显示出来
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<button>隐藏</button>
+<div class="tt" id="tt">黑马程序员，传智博客</div>
+</body>
+</html>

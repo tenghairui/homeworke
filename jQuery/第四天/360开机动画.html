@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            width: 322px;
+            position: fixed;
+            bottom: 0;
+            right: -322px;
+            overflow: hidden;
+            opacity: 0;
+        }
+        #bottomPart {
+            height: 0;
+        }
+        span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $(".box").animate({
+                right:0,
+                opacity:1
+
+            },1000, function () {
+                $("#bottomPart").animate({
+                    height:101
+                },1000)
+            })
+            $("#closeButton").click(function () {
+                $("#bottomPart").animate({height:0},1000, function () {
+                    $("#box").animate({
+                        right:-322,
+                        opacity:0
+                    },1000)
+                })
+            })
+        })
+
+    </script>
+</head>
+<body>
+<div class="box" id="box">
+    <span id="closeButton"></span>
+    <div class="hd" id="headPart">
+        <img src="images/t.jpg" alt="">
+    </div>
+    <div class="bd" id="bottomPart">
+        <img src="images/b.jpg" alt="">
+    </div>
+</div>
+
+</body>
+</html>

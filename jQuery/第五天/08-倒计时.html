@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            /* .box {
+                height: 200px;
+                width: 290px;
+                margin : 0 auto;
+            } */
+            span {
+                display: inline-block;
+                width: 32px;
+                vertical-align: middle;
+                height: 44px;
+                background-color: pink;
+                text-align: center;
+                line-height: 44px;
+                
+            }
+        </style>
+        <script src="./jquery-1.12.4.js"></script>
+        <script>
+            $(function(){
+                var sss = 7200;
+                var timer = setInterval(function(){
+                    var shi = Math.floor(sss/3600);
+                    var fen = Math.floor(sss/60%60);
+                    var miao = Math.floor(sss%60);
+
+                    
+                    $("span:eq(1)").html(shi)
+                    if(fen>=10){
+                        $("span:eq(2)").html(Math.floor(fen/10))
+                        $("span:eq(3)").html(Math.floor(fen%10))
+                    }else {
+                        $("span:eq(2)").html(Math.floor("0"));
+                        $("span:eq(3)").html(Math.floor(fen));
+                    }
+                    if(miao>=0){
+                        $("span:eq(4)").html(Math.floor(miao/10));
+                        $("Span:eq(5)").html(Math.floor(miao%10))
+                    }else {
+                        $("span:eq(4)").html(Math.floor("0"));
+                        $("span:eq(5)").html(Math.floor(miao))
+                    }
+                    sss--
+                },1000)
+
+             })
+        </script>
+    
+</head>
+<body>
+    <!-- <div class="box"> -->
+            <span>0</span>
+            <span></span>:
+            <span></span>
+            <span></span>:
+            <span></span>
+            <span></span>
+    <!-- </div> -->
+       
+        
+</body>
+</html>

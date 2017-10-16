@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .teng {
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+        }
+        .rui {
+            height: 300px;
+            width: 300px;
+            background-color: skyblue;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var div=document.getElementsByTagName("div")[0]
+            div.onclick=function(){
+                this.className = "teng rui"
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+<div class="teng"></div>
+</body>
+</html>

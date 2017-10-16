@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h3 {
+            font-size: 28px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>XMLHTTpRequest</h3>
+    <script>
+        //http协议实现通信
+        var xhr = new XMLHttpRequest();
+        //设置请求行
+        xhr.open('post','8-1.php')
+        //设置请求头
+        xhr.setRequestHeader('Content-Type','application/x-www/form-urlencoded')
+                                //post对应的就是'Content-Type','application/x-www/form-urlencoded'
+        //设置请求主体
+        xhr.send('username=itcast&pass=123')
+                    //只是名字和密码 随意的写
+
+        //接受服务器相应(异步的形式去加载)
+        xhr.onreadystatechange=function(){
+            //只有等于4的时候 响应结束
+            if(xhr.readyState==4){
+                var reslut =xhr.responseText;
+            }
+            //通过dom来把响应结果发送到页面上
+            document.querySelector("#aaa").innerHTML=xhr.responseText
+                                                        //接受响应结果
+
+        }
+
+        //还有一些程序等待执行
+
+    </script>
+</body>
+</html>

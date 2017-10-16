@@ -1,0 +1,303 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", STXihei, STHeiti, Heiti, SimSun, sans-serif;
+    text-shadow: 0 1px 0 black, 0 0 5px black;
+
+}
+main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+section.first {
+    width: 100%;
+    background: url("../images/first-bg.jpg") no-repeat center top;    
+}
+nav.nav {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1170px;
+    min-width: 800px;
+    height: 75px;
+}
+section.first .nav-left {
+    float: left;
+}
+.nav-left .logo {
+    display: block;
+    float: left;
+    /* 计算logo，将logo居中放置 */
+    margin-top: calc((75px - 44px)/2);
+}
+.nav-left ul {
+    float: left;
+    padding-left: 20px;
+}
+.nav-left ul li {
+    float: left;
+    font-size: 18px;
+    margin-left: 20px;
+}
+section.first .nav-left ul a {
+    display: block;
+    line-height: 75px;
+    padding: 0 20px;
+}
+section.first .nav-left li.active  a {
+    background-color: #12b7f5;
+}
+    /* 右侧导航栏 */
+.nav-right {
+    float: right;
+    width: 320px;
+}
+.nav-right .signup {
+    float: left;
+    display: block;
+    width: 96px;
+    height: 39px;
+    background: url("../images/sprite-icon.png") no-repeat 0 -244px;
+    margin-top: calc((75px - 39px)/2);
+}
+.nav-right .extra {
+    float: right;
+}
+.nav-right .extra ul {
+    overflow: hidden;
+}
+.nav-right .extra li {
+    float: left;
+    font-size: 14px;
+    margin-left: 30px;
+    line-height: 40px;
+}
+.nav-right .extra>a {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+}
+        /* 网站标题 */
+section.first .site-name {
+    width: 220px;
+    height: 124px;
+    margin: 0 auto;
+    background: url('../images/site-name.png') no-repeat ;
+    background-position: center center;
+}
+        /* 立即下载 */
+.download {
+    width: 240px;
+    height: 53px;
+    margin: 20px auto;
+    background: url("../images/download.png") no-repeat;
+    background-position: center center;
+}
+        /* 特点 */
+.featrue {
+    width: 812px;
+    height: 147px;
+    margin: 0 auto;
+    background: url("../images/feture.png") no-repeat;
+    background-position: center center;
+}
+        /* 文档 */
+.doc {
+    width: 98%;
+    margin: 0 auto;
+}
+.doc img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+.imqq {
+    width: 100%;
+    height: 280px;
+    background: url("../images/imqq.png") no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+        /* 第二屏 */
+.second {
+    width: 100%;
+    height: 600px;
+    background: url('../images/firstimage.jpg') no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+    /* 第三屏 */
+.third {
+    width: 100%;
+    height: 548px;
+    background-color: #fff;
+}
+.third .third-wrap {
+    width: 960px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+.third .third-wrap .third-left {
+    position: absolute;
+    left: -32px;
+    bottom: 0;
+    width: 664px;
+    height: 763px;
+    background: url("../images/third-iphone.png") no-repeat;
+}
+.third .third-wrap .third-right {
+    position: absolute;
+    right: 7px;
+    top: 115px;
+    width: 487px;
+}
+.third .third-wrap .third-right .goutong {
+    width: 100%;
+    height: 135px;
+    background: url("../images/third-goutong.png") no-repeat center top;  
+}
+.third .third-wrap .third-right p {
+    font-size: 18px;
+    text-align: right;
+    line-height: 25px;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    margin-bottom: 12px;
+}
+.third .third-wrap .third-right .more {
+    display: block;
+    font-size: 20px;
+    text-align: right;
+    color: #12b7f5;
+    opacity: 0.6;
+}
+.third .third-wrap .third-right ul {
+    overflow: hidden;
+   background: url("../images/third-feture.png") no-repeat;
+   background-position: 190px -5px;
+   margin-top: 20px;
+}
+.third .third-wrap .third-right li {
+    float: right;
+    font-size: 14px;
+    padding: 58px 0 0 ;
+    color: #a0a0a0;
+    text-align: right;
+    width: 110px;
+}
+        /* 第四屏 */
+.fourth {
+    width: 100%;
+    height: 600px;
+    background: url("../images/fourthimage.jpg") no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+        /* 第五屏 */
+.fifth {
+    width: 100%;
+    height: 584px;
+}
+.fifth .fifth-wrap {
+    width: 960px;
+    height: 100%;
+    position: absolute;
+    margin:  0 auto;
+}
+.fifth .fifth-left {
+    position: absolute;
+    left: 200px;
+    top: 115px;
+    width: 450px;
+}
+.fifth .fifth-left .fifth-txt {
+    width: 100%;
+    height: 135px;
+    background: url("../images/txt.png") no-repeat;
+}
+.fifth .fifth-left p {
+    width: 90%;
+    margin-bottom: 12px;
+    padding-left: 5px;
+    line-height: 25px;
+    opacity: 0.6;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+}
+.fifth .fifth-left .gengduo {
+    display: block;
+    font-size: 20px;
+    text-align: left;
+    color: #12b7f5;
+    opacity: 0.6;
+
+}
+.fifth .fifth-right {
+    position: absolute;
+    right: -260px;
+    bottom: 180px;
+    width: 597px;
+    height: 330px;
+    background: url("../images/fifth-computer.png") no-repeat;
+}
+
+        /* 第六屏 */
+.sixth {
+    width: 100%;
+    height: 600px;
+    background: url("../images/siximage.jpg") no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+        /* 第七屏 */
+.seventh {
+    width: 100%;
+    height: 600px;
+}
+.seventh .seventh-wrap {
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.seventh .seventh-wrap .seventh-left {
+    position: absolute;
+    left: 88px;
+    bottom: 0;
+    width: 334px;
+    height: 506px;
+    background: url("../images/seven-iphone.png") no-repeat center center;
+}
+.seventh .seventh-wrap .seventh-right {
+    position: absolute;
+    right: 7px;
+    top: 120px;
+    width: 495px;
+}
+.seventh .seventh-wrap .seventh-txt {
+    width: 100%;
+    height: 135px;
+    background: url('../images/qblog_txt.png')no-repeat center center;
+    margin-bottom: 15px;
+}
+.seventh .seventh-right p {
+    width: 100%;
+    margin-bottom: 12px;
+    line-height: 25px;
+    text-align: right;
+    opacity: 0.6;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+}
+.seventh .seventh-right .liaojie {
+    color: #12b7f5;
+    float: right;
+    font-size: 20px;
+    opacity: 0.6
+}
+
+
+

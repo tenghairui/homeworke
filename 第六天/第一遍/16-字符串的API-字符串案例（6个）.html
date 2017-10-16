@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //1.截取字符串"我爱中华人民共和国"，中的"中华"
+
+//    var aaa = "我爱中华人民共和国";
+//    console.log(aaa.slice(2,4))
+
+    //2."abcoefoxyozzopp"查找字符串中所有o出现的位置
+//    var aaa = "abcoefoxyozzopp"
+//for(var i = 0 ; i<aaa.length;i++){
+//    if(aaa.charAt(i)==="o"){ //如果字符串aaa里边的字符是o；
+//        console.log(i)//就显示他的位置
+//    }
+//}
+    //3."abcoefoxyozzopp"o替换成i
+//    var aaa = "abcoefoxyozzopp";
+//    console.log(aaa)
+////    console.log(aaa.replace(/o/ig,"i"))
+//do{
+//    var bbb = aaa.indexOf("o");
+//    if(bbb>-1){
+//        aaa=aaa.replace("o","i")
+//    }
+//
+//}while(bbb>=0)
+//    console.log(aaa)
+//    //4.把字符串中的所有空白去掉'   abc       xyz  a    123   '
+//var aaa = "   abc       xyz  a    123   "
+//    console.log(aaa)
+//    var arr = aaa.split(" ");//转换为数组
+//    console.log(arr)
+//    var bbb = arr.join("");//转换成字符串
+//    console.log(bbb)
+
+    //5.统计各个字符串出现的次数；'abcoefoxyozzopp'
+//var aaa = "abcoefoxyozzopp"
+//var ccc = {}
+//    for(var i=0;i<aaa.length;i++){
+//        var gg = aaa.charAt(i);
+//        if(ccc[gg]!==undefined){
+//            ccc[gg]=ccc[gg]+1
+//        }else{
+//            ccc[gg]=1
+//        }
+//    }
+//    console.log(ccc)
+    //6.获取url中?后面的内容，并转化成对象的形式。
+    //例如：http://www.itheima.com/login?name=zs&age=18&a=1&b=2
+      var aaa = "http://www.itheima.com/login?name=zs&age=18&a=1&b=2"
+      var ccc=aaa.lastIndexOf("?")
+      var ddd = aaa.slice(ccc+1)
+      console.log(ddd)
+    var fff = ddd.split()
+    console.log(fff)
+    console.log(fff.join(":"))
+//    var sss= {}
+//    for(var i=0;i<fff.length;i++){
+//        //要添加还要把数组中每一个元素，在分割一次；
+       // var newArr =fff[i].split("=");//["name","zs];["age","18"];...
+//        //把第一个元素设置为属性，第二个元素设置为值；
+//        sss[newArr[0]] = newArr[1];//json.name = "zs";
+//    }
+//        console.log(sss)
+
+</script>
+</body>
+</html>

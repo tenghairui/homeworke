@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function CreateStudent(name, score) {
+        //内存中有一个地址上面有这个对象
+        this.name = name;
+        this.score = score;
+
+    }
+    CreateStudent.prototype.printScore = function () {
+        console.log(this.name + "的分数为" + this.score);
+    }
+
+    CreateStudent.prototype.study = function () {
+        console.log(this.name + "正在学习")
+    }
+//    console.log(CreateStudent.constructor)
+    console.log( CreateStudent.prototype.constructor)
+    console.log()
+
+//
+//    var s1 = new CreateStudent("Michael", 98);// 构造函数有一个不成文规定 名称首字母大写
+//    var s2 = new CreateStudent("Bob", 81);
+//
+//    s1.printScore();
+//    s2.printScore();
+
+</script>
+</body>
+</html>

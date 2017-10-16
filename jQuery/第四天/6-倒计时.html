@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        span {
+            display: inline-block;
+            width: 32px;
+            height: 44px;
+            background-color: pink;
+            text-align: center;
+            line-height: 44px;
+        }
+    </style>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+
+            var sss = 7200  //定义一个秒钟 7200 秒是两个小时
+            var timer = setInterval(function () {
+                var hour = Math.floor(sss/3600)//两个小时
+                var fen = Math.floor(sss/60%60)//
+                var miao = Math.floor(sss%60)
+
+                $("span:eq(1)").html(hour)
+                if(fen>=10){
+                    $("span:eq(2)").html(Math.floor(fen/10))
+                    $("span:eq(3)").html(Math.floor(fen%10))
+                }else {
+                    $(" span:eq(2)").html("0");
+                    $(" span:eq(3)").html(fen);
+                }
+                if(miao>=10){
+                    $("span:eq(4)").html(Math.floor(miao/10))
+                    $("span:eq(5)").html(Math.floor(miao%10))
+                } else {
+                    $(" span:eq(4)").html("0");
+                    $(" span:eq(5)").html(miao);
+                }
+                sss--
+            },1000)
+        })
+
+    </script>
+</head>
+<body>
+<span>0</span>
+<span></span>:
+<span></span>
+<span></span>:
+<span></span>
+<span></span>
+</body>
+</html>

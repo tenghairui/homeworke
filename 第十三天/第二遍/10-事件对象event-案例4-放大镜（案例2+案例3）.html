@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 350px;
+            height: 350px;
+            margin: 100px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+
+        .big {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 360px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            display: none;
+        }
+
+        .mask {
+            width: 175px;
+            height: 175px;
+            background: rgba(255, 255, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: move;
+            display: none;
+        }
+
+        .small {
+            position: relative;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+    </style>
+    <script src="jquery1.11.1-min.js"></script>
+    <script>
+        window.onload= function () {
+            //需求1：鼠标进入小盒子显示黄盒子和大盒子，移开隐藏;
+            //需求2：鼠标进入小盒子，黄盒子跟随移动;(案例2+案例3)
+            //需求3：黄盒子跟随的同时，大盒子里面的图片等比例移动;(比例有两种)
+
+
+            //外盒子
+            var box = document.getElementById("box");
+            //左盒子
+            var small = document.getElementById("small");
+            //黄盒子
+            var mask =document.getElementById("mask");
+            //右盒子
+            var big = document.getElementById("big");
+            //右边大图片
+            var bigimg = big.getElementsByTagName("img")[0];
+
+            //需求1：鼠标进入小盒子显示黄盒子和大盒子，移开隐藏;
+            small.onmouseenter=function(){
+                show(mask);
+                show(big);
+            }
+            small.onmouseleave= function () {
+                hide(mask);
+                hide(big)
+            }
+            //需求2：鼠标进入小盒子，黄盒子跟随移动;(案例2+案例3)
+            small.onmousemove=function(event){
+                var event=event||window.event;
+                //获取鼠标在页面中的坐标
+                var pagex = event.pageX||event.clientX+scrollLeft();
+                var pagey = event.pageY||event.clientY+scrollTop();
+                //获取小盒子在页面中的坐标
+                var smallx = small.offsetLeft +box.offsetLeft;
+                var smally=small.offsetTop+box.offsetTop;
+                //获取鼠标在小盒子中的坐标 = 鼠标在页面中的坐标-小盒子在页面中的坐标（-黄盒子的一半，鼠标在黄盒子的中间位置）
+                var x =pagex-smallx-mask.offsetWidth/2;//黄盒子宽度的一半
+                var y= pagey-smally-mask.offsetHeight/2;//黄盒子高度的一半
+                //鼠标进入小盒子碰到小盒子就可以移动黄盒子，超出范围，所以给鼠标一个约束
+                if(x<0){
+                    x=0
+                };
+                if(x>small.offsetWidth-mask.offsetWidth){
+                    x=small.offsetWidth-mask.offsetWidth
+                }
+                if(y<0){
+                    y=0
+                }
+                if(y>small.offsetHeight-mask.offsetHeight){
+                    y=small.offsetHeight-mask.offsetHeight
+                }
+                //赋值给小盒子
+                mask.style.left=x+"px";
+                mask.style.top=y+"px"
+                //需求3：黄盒子跟随的同时，大盒子里面的图片等比例移动;(比例有两种)
+                var bili = bigimg.offsetWidth/small.offsetWidth
+                var yy=bili*y
+                var xx=bili*x
+                //给图片赋值
+                bigimg.style.left=-xx+"px";
+                bigimg.style.top=-yy+"px"
+            }
+
+
+
+
+        }
+    </script>
+
+</head>
+<body>
+<meta charset="UTF-8">
+<title></title>
+<div class="box" id="box">
+    <!--左侧盒子-->
+    <div class="small" id="small">
+        <img src="images/001.jpg" alt=""/>
+        <!--黄盒子-->
+        <div class="mask" id="mask"></div>
+    </div>
+    <!--右侧盒子-->
+    <div class="big" id="big">
+        <!--大图片-->
+        <img style="position: absolute;" src="images/0001.jpg" alt=""/>
+    </div>
+</div>
+</body>
+</html>

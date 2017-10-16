@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    window.onload= function () {
+        aaa()//让他之前就有颜色
+        window.onresize=aaa//把他的颜色给他  让他每改变1像素，都会发生变化
+    }
+
+    function aaa(){
+        if(width()>1100){
+            document.body.style.background="red"
+        }else if(width()>1000){
+            document.body.style.background="orange";
+        }else if(width()>900){
+            document.body.style.background="yellow"
+        }else if(width()>800){
+            document.body.style.background="green"
+        }else if(width()>700){
+            document.body.style.background="blue"
+        }else if(width()>600){
+            document.body.style.background="indigo"
+        }else{
+            document.body.style.background="violet"
+        }
+    }
+
+        //获取浏览器可视区域的宽
+    function width(){
+        return window.innerWidth||document.documentElement.clientWidth
+    }
+</script>
+</body>
+</html>

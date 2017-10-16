@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel ul {
+            list-style: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel ul li {
+            float: left;
+            width: 100%;
+        }
+
+        .carousel ul a {
+            display: block;
+            width: 100%;
+        }
+
+        .carousel ul img {
+            width: 100%;
+            height: auto;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel">
+        <ul>
+            <li><a href="javascript:;"><img src="./image/0.png" alt=""></a></li>
+            <li><a href="javascript:;"><img src="./image/1.png" alt=""></a></li>
+            <li><a href="javascript:;"><img src="./image/2.png" alt=""></a></li>
+            <li><a href="javascript:;"><img src="./image/3.png" alt=""></a></li>
+            <li><a href="javascript:;"><img src="./image/4.png" alt=""></a></li>
+            <li><a href="javascript:;"><img src="./image/5.png" alt=""></a></li>
+            <li><a href="javascript:;"><img src="./image/6.png" alt=""></a></li>
+            <li><a href="javascript:;"><img src="./image/7.png" alt=""></a></li>
+        </ul>
+    </div>
+
+    <script>
+        // 获取元素 carousel ul 第一个li 最后一个li
+        var carousel = document.querySelector('.carousel');
+        var ul = document.querySelector('ul');
+        var firstLi =ul.querySelector('li');
+        var lastLi =ul .querySelector('li:lastchild')
+
+        // 声明变量
+
+        var aLi,carouselWidth;
+        // 初始化页面
+        function init(){
+            //在最后一个li后面添加第一个li
+            ul.appendChild(firstLi.cloneNode(true));
+            // 在第一个li前面添加最后一个li
+            ul.insertBefore(lastLi.cloneNode(true),firstLi);
+
+            aLi =document.querySelectorAll('li');
+            // 设置ul和li的宽度
+
+            setWidth();
+        }
+
+            // ul li carousel 宽度 进行封装 方便调用
+        function setWidth() {
+            carouselWidth = carousel.setWidth;
+
+            ul.style.width = carouselWidth * aLi.length + 'px';
+
+            for(var i = 0 ; i < aLi.length ; i++) {
+                aLi[i].style.width = carouselWidth + 'px';
+            }
+        }
+
+        init()
+    </script>
+</body>
+
+</html>

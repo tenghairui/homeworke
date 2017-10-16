@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        button {
+            height: 30px;
+            width: 60px;
+            font-size: 18px;
+            font-weight: 700;
+            color: indianred;
+        }
+        .teng {
+            display: block;
+            height: 100px;
+            width: 100px;
+            background-color: skyblue;
+            color: orange;
+        }
+         .rui{
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var button = document.getElementsByTagName("button")[0];
+            var div = document.getElementById("teng")
+            button.onclick=function(){
+                if(this.innerHTML==="隐藏"){
+                    this.innerHTML="显示"
+                    div.className=" rui"
+
+                }else{
+                    this.innerHTML="隐藏"
+                    div.className="teng"
+
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<button>隐藏</button>
+<div class="teng" id="teng">我爱你，爱你爱你</div>
+</body>
+</html>

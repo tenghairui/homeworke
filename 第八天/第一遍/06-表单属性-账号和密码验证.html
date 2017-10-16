@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .aa {
+        border:1px solid red;
+        }
+        .ss {
+            border: 1px solid yellowgreen;
+
+        }
+        .bb {
+            color: red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var put = document.getElementsByTagName("input")[0];
+            var span = document.getElementsByTagName("span")[0];
+            put.onblur=function(){
+                if(this.value.length>=4&&this.value.length<=20){
+                    this.className = "ss";
+                    span.className = "aa";
+                    span.innerHTML = "恭喜您，输入正确！";
+                }else {
+                    this.className = "ss";
+                    span.className = "bb";
+                    span.innerHTML = "账号必须是4-20位之间";
+                }
+                }
+        }
+
+    </script>
+</head>
+<body>
+账号：<input type="text"><span>请输入账号</span><br/>
+密码：<input type="text"><span>请输入密码</span>
+</body>
+</html>

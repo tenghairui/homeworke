@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    //创建匿名函数
+    (function(window){
+        //创建构造函数
+            function Fn(box){
+                this.qqq = document.getElementById(box);
+                //构建函数一定要清空数据,就像margin：0相似；
+                this.pagex=0;
+                this.pagey=0;
+            }
+        //原型方程式
+        Fn.prototype.aaa= function () {
+            var that=this;//吧this赋值给that
+            //在原型中填写事件
+            this.qqq.onmousedown=function(event){
+                event=event||event//全局变量
+
+                //鼠标在盒子中的坐标
+                that.pagex=event.clientX-this.offsetLeft;
+                that.pagey=event.clientY-this.offsetTop;
+
+                document.onmousemove= function (event) {
+                    that.fnmove(event)
+                }
+               document.onmouseup= function (event) {
+                    that.fnup(event)
+                }
+            }
+
+        }
+        Fn.prototype.fnmove= function (event) {
+            //赋值
+            this.qqq.style.left=event.clientX-this.pagex+"px"
+            this.qqq.style.top=event.clientY-this.pagey+"px"
+        }
+        Fn.prototype.fnup= function (event) {
+            document.onmouseup=document.onmousemove=null
+        }
+
+        window.Fn=Fn
+    })(window)
+
+
+    var sss = new Fn("box");
+    sss.aaa()
+</script>
+</body>
+</html>

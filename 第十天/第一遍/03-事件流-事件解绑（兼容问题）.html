@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function ccc(ele,eve,fn){
+        if(ele.addEventListener){
+            ele.addEventListener(eve,fn);
+        }else if(ele.addEvent){
+            ele.addEvent("on"+eve,fn);
+        }else{
+            ele["on"+eve]=fn;
+        }
+    }
+    var aaa=console.log("111");
+    var ddd= console.log("333")
+    ccc(document,"click",aaa);
+   ccc(document,"click",ddd)
+
+
+</script>
+</body>
+</html>

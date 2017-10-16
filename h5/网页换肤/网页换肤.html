@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>   
+    <button class="red">红色</button>
+    <button class="orange">橙色</button>
+    <script>
+        var red = document.querySelector('.red');
+        var orange = document.querySelector('.orange');
+
+        red.onclick = function(){
+            document.body.style.backgroundColor = "red";
+            // 添加数据,将数据添加进来，一会获取
+            window.localStorage.setItem('color','red')
+        }
+        orange.onclick=function(){
+            document.body.style.backgroundColor = "orange";
+            window.localStorage.setItem('color','orange');
+        }
+        window.onload=function(){
+            document.body.style.backgroundColor = window.localStorage.getItem('color');
+        }
+
+    </script>
+</body>
+</html>

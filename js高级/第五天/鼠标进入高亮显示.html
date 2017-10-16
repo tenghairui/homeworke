@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+    $(function () {
+
+
+    $("li").on("mouseenter", function () {
+        $(this).css("background","red")
+        $(this).siblings().css("background","white")
+    })
+    })
+</script>
+<body>
+<ul>
+    <li>我是第1个li元素</li>
+    <li>我是第2个li元素</li>
+    <li>我是第3个li元素</li>
+    <li>我是第4个li元素</li>
+    <li>我是第5个li元素</li>
+    <li>我是第6个li元素</li>
+    <li>我是第7个li元素</li>
+    <li>我是第8个li元素</li>
+</ul>
+
+</body>
+</html>

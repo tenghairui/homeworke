@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box {
+            width: 200px;
+            height: 100px;
+            border:1px solid red;
+            margin: 100px auto;
+            text-align: center;
+            overflow: hidden;
+        }
+        .box ul {
+            height: 150px;
+            width: 200px;·
+        }
+        .box li {
+            text-decoration: underline;
+        }
+    </style>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+
+        var timer =null
+        var num=0
+        function autoplay() {
+            num--;
+            $('#box > ul').css('marginTop',num+'px');
+
+        }
+            setInterval(autoplay,100)
+
+    </script>
+</head>
+<body>
+<div class="box" id="box">
+    <ul>
+        <li>武器满分麻烦问我额分解和</li>
+        <li>额我i发howie凤凰网附加额</li>
+        <li>额佛教为附件哦我放假哦我</li>
+        <li>未付金额借方vv汇入上课vs</li>
+        <li>额威风威风黑我反胃范围积</li>
+        <li>就废五金佛i额我看麻烦额佛</li>
+        <li>阿胶哦赔付金额哦皮肤哦额</li>
+        <li>就废五金佛i额我看麻烦额佛</li>
+        <li>金额foes金佛佩珀服务极恶</li>
+    </ul>
+</div>
+</body>
+</html>

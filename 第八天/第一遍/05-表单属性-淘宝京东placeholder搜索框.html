@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        input {
+            width: 300px;
+            height: 30px;
+            padding-left: 10px;
+            font-size: 20px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        label {
+            position: absolute;
+            top: 75px;
+            left: 68px;
+            font-size: 20px;
+            cursor: text;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var put = document.getElementsByTagName("input");
+            var lab=document.getElementsByTagName("label")[0]
+            put[0].onfocus=function(){
+                if(this.value==="乒乓球"){
+                    this.value = ""
+                }
+            }
+            put[0].onblur=function(){
+                if(this.value==="") {
+                    this.value = "乒乓球"
+                }
+            }
+            put[1].oninput=function(){
+                if(this.value===""){
+                    lab.style.display="block"
+                }else{
+                    lab.style.display="none"
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+京东：<input type="text" value="乒乓球"/><br/>
+淘宝：<label for="inp2">羽毛球</label><input id="inp2" type="text"/><br/>
+placeholder: <input type="text" placeholder="橄榄球"/><br/>
+
+</body>
+</html>

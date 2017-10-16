@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+//     for循环的用法
+//    死循环:我们要注意，for循环也要跳出条件（i++），否则就是死循环
+//       死循环，没有跳出条件 for(;;){
+//            console.log(1)
+//        }
+        //指定次数
+        for(var a=1;a<=3;a++/*(命名；跳出条件，表达式)*/){
+            console.log(a)/*打印a*/
+        }
+        //用法
+        var a=1
+    for(;a<=3;)/*就算把命名和跳出条件都放在外边，但是分好还是得保留*/{
+        console.log(a)
+        a++
+    }
+</script>
+</body>
+</html>

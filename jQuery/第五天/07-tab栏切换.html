@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            div {
+                margin-top: 30px;
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: none;
+            }
+        </style>
+    <script src="./jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $("input").click(function(){
+                var idx = $(this).index();
+                $("div").eq(idx).show().siblings("div").hide();
+            })
+        })
+    </script>
+</head>
+<body>
+        <input type="button" value="按钮1" />
+        <input type="button" value="按钮2"/>
+        <input type="button" value="按钮3"/>
+        <div  style="display: block;">1</div>
+        <div>2</div>
+        <div>3</div>
+        
+</body>
+</html>

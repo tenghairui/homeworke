@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    //构造匿名函数
+    (function(window){
+        //创建构造函数
+        function fn(box){
+            this.obj=document.getElementById(box);
+            //构造函数一般要初始化数据
+            this.disx=0;
+            this.disy=0;
+        }
+
+
+
+        //原型方式
+        fn.prototype.aaa= function () {
+            var that =this//将this赋值给that
+            //在原型中写事件
+            this.obj.onmousedown= function (event) {
+                event=event||event;
+                //鼠标在盒子中的坐标
+                that.disx=event.clientX-this.offsetLeft
+                that.disy=event.clientY-this.offsetTop;
+
+                document.onmousemove= function (event) {
+                    that.amove(event)
+                }
+                document.onmouseup= function (event) {
+                    that.aup(event)
+                }
+                }
+
+
+        }
+        fn.prototype.amove=function(event){
+            event=event||event;
+            this.obj.style.left=event.clientX-this.disx+"px"
+            this.obj.style.top=event.clientY-this.disy+"px";
+        }
+        fn.prototype.aup=function(){
+            document.onmousemove=document.onmouseup=null;
+        }
+        
+       window.fn=fn
+    })(window)
+
+    var a = new fn('box');
+    a.aaa();
+
+</script>
+</body>
+</html>

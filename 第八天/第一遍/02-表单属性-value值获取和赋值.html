@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        input {
+            width: 200px;
+            height: 30px;
+            border: 1px solid #ccc;
+            display: block;
+            margin: 10px;
+        }
+    </style>
+    <script>window.onload=function(){
+        var but = document.getElementsByTagName("button");
+        var put = document.getElementsByTagName("input");
+        but[0].onclick=function(){
+            var str="";
+            for(var i=0;i<put.length;i++){
+                str=str+put[i].value
+            }
+            console.log(str)
+        }
+        but[1].onclick=function(){
+            arr=["张飞","小樱","关羽","小红","刘备",]
+            for(var i=0;i<put.length;i++){
+                put[i].value= arr[i]
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+<button>获取值</button>
+<button>赋值</button>
+
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div></div>
+<script>
+    var qqq = setInterval(function(){
+        var now = new Date().getTime();
+        var www = new Date("2017/08/28 00:00:00").getTime()
+        var zsj = www-now;
+
+        var tian =parseInt(zsj/1000/60/60/24);
+        var shi = parseInt(zsj/1000/60/60%24);
+        var fen = parseInt(zsj/1000/60%60);
+        var miao = parseInt(zsj/1000%60);
+        var haomiao = parseInt(zsj%1000);
+
+        tian=tian<10?"0"+tian:tian;
+        shi=shi<10?"0"+shi:shi;
+        fen=fen<10?"0"+fen:fen;
+        miao=miao<10?"0"+miao:miao;
+        haomiao=haomiao<10?"0"+haomiao:haomiao;
+        console.log(""+tian+"天"+shi+"时"+fen+"分"+miao+"秒"+haomiao+"毫秒")
+        document.getElementsByTagName("div")[0].innerHTML = ""+tian+"天"+shi+"时"+fen+"分"+miao+"秒"+haomiao+"毫秒"
+
+
+
+
+    },1)
+
+
+
+</script>
+</body>
+</html>

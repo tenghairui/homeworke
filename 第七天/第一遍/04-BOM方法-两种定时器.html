@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div></div>
+<script>
+//    setInterval()//循环定时器；函数  毫秒值
+    //setTimeout()//炸弹定时器    毫秒值
+//setInterval(function(){
+//    console.log(222)
+//},2000)
+var ccc = setInterval(function(){
+    var now = new Date()/*.getTime();*/
+    var aaa = new Date("2017/08/28 00:00:00")/*.getTime()*/
+    var date = aaa - now;
+    if(date<=0){
+        document.getElementsByTagName("div")[0].innerHTML ="七夕到"
+        return
+    }
+
+   var  tian = parseInt(date/1000/60/60/24)
+   var  shi = parseInt(date/1000/60/60%24);
+    var fen = parseInt(date/1000/60%60);
+   var  miao = parseInt(date/1000%60)
+   var  haomiao = parseInt(date%1000);
+
+    tian = tian<10?"0"+tian:tian
+    shi = shi<10?"0"+shi:shi
+    fen = fen<10?"0"+fen:fen
+    miao = miao<10?"0"+miao:miao
+    if(haomiao<10){
+        haomiao = "00"+haomiao
+    }else if(haomiao<100){
+        haomiao="0"+haomiao
+    }
+
+
+    console.log(""+tian+"天"+shi+"时"+fen+"分"+miao+"秒"+haomiao+"毫秒")
+
+    document.getElementsByTagName("div")[0].innerHTML =""+tian+"天"+shi+"时"+fen+"分"+miao+"秒"+haomiao+"毫秒"
+
+},1)
+
+
+
+
+</script>
+</body>
+</html>

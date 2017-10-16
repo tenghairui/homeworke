@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //三种方式 ，    第一种就是在花括号里边写属性和值；
+        //              第二种就是在括号后边用.的形式进行添加属性和值
+        //              第三种就是花括号后边用[]的形式进行添加属性和值
+        
+        var obj = {
+            color:'red'
+        };
+            // 使用点运算符（.）来设置属性的值
+            obj.name = "这是name属性的值";
+            obj.age = 18; // 给age属性设置值：18
+            // 使用方括号[]来设置属性的值，注意：要访问的属性是字符串的形式或者是变量
+            obj["font-size"] = "30px";
+
+            //读取也有两种方法 第一种就是console.log(obj.name);
+            //  第二种就是用中括号的形式进行打印console.log(obj["name"])
+            console.log(obj);
+            console.log(obj.name);
+            console.log(obj["age"]);
+
+            
+
+
+
+    </script>
+</body>
+</html>

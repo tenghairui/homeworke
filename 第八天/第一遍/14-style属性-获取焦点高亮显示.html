@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        input {
+            display: block;
+            width: 300px;
+            height: 30px;
+            border: 1px solid #ccc;
+            outline-style: none;
+            margin: 10px;
+            padding-left: 10px;
+            font-size: 18px;
+            color: #000;
+        }
+    </style>
+    <script>
+        window.onload=function() {
+            var put = document.getElementsByTagName("input");
+            for (var i = 0; i < put.length; i++) {
+                put[i].onblur = function () {
+                    this.style.background = "#fff"
+                    this.style.border = "1px solid #ccc"
+                }
+                put[i].onfocus = function () {
+                    this.style.background = "pink"
+                    this.style.border = "1px solid red"
+                    this.style.color="red"
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+
+</body>
+</html>

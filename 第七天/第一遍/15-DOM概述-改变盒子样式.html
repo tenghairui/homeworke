@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .aa {
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+        }
+        .t {
+            height: 300px;
+            width: 300px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var div = document.getElementsByTagName("div")[0];
+            div.onclick= function(){
+                this.className = "aa t";
+            }
+
+        }
+
+    </script>
+
+</head>
+<body>
+<div class="aa"></div>
+</body>
+</html>

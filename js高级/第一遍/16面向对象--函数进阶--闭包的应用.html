@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            display: none;
+        }
+        .active{
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+<input type="button" value="按钮1" class="active" />
+<input type="button" value="按钮2" />
+<input type="button" value="按钮3" />
+<div style="display: block;">内容1</div>
+<div>内容2</div>
+<div>内容3</div>
+<script>
+
+    //闭包
+
+
+    var input = document.getElementsByTagName("input");
+    var div=document.getElementsByTagName("div");
+
+//    for(var i=0;i<input.length;i++){
+//        (function (i) {
+//        input[i].onclick=function(){
+//            for(var j=0;j<input.length;j++){
+//                input[j].className="";
+//                div[j].style.display="none"
+//            }
+//            this.className="active"
+//            div[i].style.display="block"
+//        }
+//
+//        })(i)
+
+//    }
+    for(var i=0;i<input.length;i++){
+        fn(i)
+    }
+    function fn(i) {
+        input[i].onclick = function () {
+            for (var j = 0; j < input.length; j++) {
+                input[j].className = "";
+                div[j].style.display = "none"
+            }
+            this.className = "active"
+            div[i].style.display = "block"
+        }
+    }
+</script>
+</body>
+</html>

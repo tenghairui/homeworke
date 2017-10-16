@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            height: 5000px;
+        }
+        .box {
+            width: 300px;
+            height: 420px;
+            position: relative;
+            margin: 100px auto;
+            overflow: hidden;
+            border: 1px solid red;
+        }
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 260px;
+            padding: 10px;
+            text-align: center;
+            font: 500 20px/34px "simsun";
+            background-color: #61ff51;
+        }
+        .scroll-box {
+            width: 20px;
+            height: 420px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: #bbb;
+        }
+        .bar {
+            position: absolute;
+            width: 20px;
+            background-color: red;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    </style>
+    <script src="jquery1.11.1-min.js"></script>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById("box");
+            var content=box.firstElementChild||box.firstChild;
+            var scrollbox=content.nextElementSibling||content.nextSibling//content的兄弟;
+            var bar =scrollbox.children[0];
+            //需求1：根据比例计算出bar的高度;
+
+            //比例1：bar的高/scrollBox的高 = box的高/content的高;
+            //要求出barHeight。所以比例问题。大的比小的  再用比出来的*右边的大的，就出来小的大小
+
+            var bili1 = box.clientHeight/content.offsetHeight;//不能获取box的border。会影响计算.所以要用client；
+            var barHeight=bili1*scrollbox.offsetHeight;
+            //需求2：鼠标在bar上按下，并移动的时候，bar跟随;(案例5)
+            if(box.clientHeight > content.offsetHeight){
+                return;
+            }
+            bar.style.height = barHeight+"px";
+
+            bar.onmousedown=function(event){
+                var event=event||window.event;
+                //求出鼠标在页面中的坐标。只在上下走  所以不用求left就可以
+                var pagey=event.pageY||event.clientY+scrollTop();
+                //求小bar在页面中的坐标
+                var bary =bar.offsetTop;
+                var y=pagey-bary;
+              document.onmousemove=function(event){
+                var event=event||window.event;
+                  var pagey=event.pageY||event.clientY+scrollTop();
+                  //鼠标在页面中的位置-小bar在页面的位置
+                  var yy = pagey-y;
+                  //给他约束
+                  if(yy<0){
+                      yy=0
+                  }
+                  if(yy>scrollbox.offsetHeight-bar.offsetHeight){
+                      yy=scrollbox.offsetHeight-bar.offsetHeight
+                  }
+                        //直接给小bar赋值
+                  bar.style.top=yy+"px"
+
+                  var bili2 = (content.offsetHeight-box.clientHeight)/(scrollbox.offsetHeight-barHeight);
+                  var yyy = bili2*yy;//比例乘以小bar走过的真实距离;
+                  //赋值
+                  content.style.top = -yyy +"px";
+
+                  window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+
+
+
+              }
+
+
+
+            }
+            //需求3：bar跟随移动的同时，内容区要求等比例移动;(案例4)
+            //鼠标弹起，事件解绑
+            document.onmouseup = function () {
+                document.onmousemove = null;
+
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+<div class="box" id="box">
+    <div class="content">
+        "---------start---------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "------------------"<br>
+        知人不必言尽，言尽则无友;<br>
+        责人不必苛尽，苛尽则众远;<br>
+        敬人不必卑尽，卑尽则少骨;<br>
+        "----------end---------"<br>
+    </div>
+    <div class="scroll-box">
+        <div class="bar"></div>
+    </div>
+</div>
+
+</body>
+</html>

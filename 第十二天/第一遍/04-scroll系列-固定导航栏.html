@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        .top {
+            width: 1500px;
+            margin: 0 auto;
+        }
+
+        .main {
+            margin: 0 auto;
+            width: 1000px;
+        }
+
+        #Q-nav {
+            width: 1500px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var first =document.getElementById("top")
+            var second =document.getElementById("Q-nav");
+            var third=document.getElementById("main");
+
+            window.onscroll=function(){
+                if(scrollTop()>first.offsetHeight){//如果调用高度超过第一个预测高度
+                    second.className="fixed"//那么给第二个附加定位类
+                    third.style.marginTop=second.offsetHeight+"px"//给第三个添加一个和第二个一样的高度
+                }else{
+                    second.className=""//把他的类取消
+                    third.style.marginTop=0//把他的高度取消
+
+                }
+
+            }
+        }
+        //封装
+        function scrollTop(){
+            return window.pageYOffset||document.documentElement.scrollTop
+        }
+
+    </script>
+</head>
+<body>
+<!--第一张图片-->
+<div class="top" id="top">
+    <img src="images/top.png" alt=""/>
+</div>
+<!--第二张图片-->
+<div id="Q-nav">
+    <img src="images/nav.png" alt=""/>
+</div>
+<!--第三张图片-->
+<div class="main" id="main">
+    <img src="images/main.png" alt=""/>
+</div>
+
+
+</body>
+</html>

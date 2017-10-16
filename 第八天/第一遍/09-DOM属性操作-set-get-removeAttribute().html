@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload=function(){
+            var div = document.getElementById("teng");
+//            console.log(div.getAttribute("title"));查看标签属性是什么
+//            console.log(div.getAttribute("class"));查看标签属性是什么
+            div.title="duan";//给属性名命名名字
+          div.setAttribute("title","ccc")//更改属性名名字
+            console.log(div.getAttribute("title"))//查看名字
+            console.log(div.getAttribute("innerHTML"))
+
+        }
+
+    </script>
+</head>
+<body>
+<div id="teng" class="hai" title="rui"></div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .nodeSmall {
+            width: 50px;
+            height: 50px;
+            background: url(image/bgs.png) no-repeat -159px -51px;
+            position: fixed;
+            right: 10px;
+            top: 40%;
+        }
+        .erweima {
+            position: absolute;
+            top: 0;
+            left: -150px;
+            display: none;
+        }
+        .nodeSmall a {
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+        /*.hide {*/
+            /*display: none;*/
+        /*}*/
+
+        /*.show {*/
+            /*display: block;*/
+        /*}*/
+    </style>
+    <script>
+        window.onload=function(){
+            var er = document.getElementById("nodeSmall")
+            var dade = document.getElementById("er")
+            er.onmouseover=function(){
+               dade.style.display="block"
+            }
+            er.onmouseout=function(){
+                dade.style.display="none"
+            }
+
+
+
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+<div class="nodeSmall" id="nodeSmall">
+    <!--a链接,鼠标放上去,显示二维码-->
+    <a href="#"></a>
+    <!--二维码-->
+    <div class="erweima hide" id="er">
+        <img src="image/456.png" alt=""/>
+    </div>
+</div>
+<img src="image/1.jpg" alt=""/>
+</body>
+</html>

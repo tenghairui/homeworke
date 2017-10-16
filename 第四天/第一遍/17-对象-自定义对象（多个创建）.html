@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //函数，把创建对象的代码封装成一个方法；需要修改的内容变成参数；
+    function aa(name,age){
+        var stu = new Object();
+        stu.name = name ;
+        stu.age = age
+        stu.study = function(){
+            console.log(this.name+":我爱你");
+        }
+        return stu
+    }
+    var stu1 = aa("郑爽",18);
+    console.log(stu1.name)
+//    var stu2 = aa("郑爽",18);
+    console.log(stu1.age)
+    console.log(stu1.study)
+    console.log(stu1)
+    stu1.study()
+
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        img {
+            margin-left: 200px;
+
+        }
+    </style>
+    <script src="jquery-1.12.4.min.js"></script>
+    <!--<script>-->
+        <!--$(function () {-->
+<!--//            $("input:eq(0)").click(function () {-->
+<!--//                $("body").css("background","white")-->
+<!--//            })-->
+            <!--$("input").click(function () {-->
+                <!--$("body").css("background","black")-->
+                <!--$(this).html("开灯")-->
+            <!--})-->
+        <!--})-->
+    <!--</script>-->
+    <!--<script>-->
+        <!--window.onload= function () {-->
+            <!--var input=document.getElementsByTagName("input")[0];-->
+
+            <!--input.onclick= function () {-->
+
+                <!--if (this.value =="关灯") {-->
+
+                    <!--this.value = "开灯"-->
+                    <!--document.body.style.background = "#000"-->
+                <!--} else if (this.value == "开灯") {-->
+                    <!--this.value = "关灯"-->
+                    <!--document.body.style.background = "#fff"-->
+
+                <!--}-->
+
+
+            <!--}-->
+        <!--}-->
+    <!--</script>-->
+
+</head>
+<body>
+<!--<input type="button" value="开灯"/>-->
+<input type="button" value="关灯"/><br/>
+<img src="images/09.jpg" alt=""/>
+<script>
+    $("input").click(function () {
+        if($(this).val() == "关灯"){
+            $("body").css("background","black")
+            $(this).val("开灯");
+        }else if($(this).val()==="开灯"){
+            $("body").css("background","white")
+            $(this).val("关灯");
+
+        }
+    })
+</script>
+</body>
+</html>

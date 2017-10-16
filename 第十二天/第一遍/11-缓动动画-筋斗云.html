@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        body {
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .box {
+            width: 800px;
+            height: 42px;
+            margin: 100px auto;
+            background: #fff url("images/wifi.png") no-repeat right center;
+            border-radius: 10px;
+            position: relative;
+        }
+        ul {
+            position: relative;
+        }
+        ul li {
+            float: left;
+            width: 83px;
+            height: 42px;
+            text-align: center;
+            line-height: 42px;
+            cursor: pointer;
+        }
+        span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 83px;
+            height: 42px;
+            background: url("images/cloud.gif") no-repeat;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var box = document.getElementsByTagName("div")[0];
+            var span = document.getElementsByTagName("span")[0];
+            var ul = box.getElementsByTagName("ul")[0];
+            var liarr =ul.children;
+            var count=0
+            var spanWidth=span.offsetWidth
+
+            //需求1：鼠标进入哪个li，span就缓动到这个li上;
+                for(var i=0;i<liarr.length;i++){
+                    liarr[i].index=i
+                    liarr[i].onmouseenter=function(){
+                        animate(span,spanWidth*this.index)
+                    }
+                    //需求3：鼠标点击哪个li，哪个li就是记录点;
+                        liarr[i].onclick=function(){
+                            count =this.index
+                        }
+
+                    //需求2：鼠标移开box，span就缓动到默认的记录点li上(默认记录点为第一个);
+                    box.onmouseleave= function () {
+                        animate(span,count*spanWidth)
+                    }
+                }
+
+
+
+
+
+
+
+            function animate(ele,target){
+                clearInterval(ele.timer);
+                ele.timer=setInterval(function () {
+                    var step=(target-ele.offsetLeft)/10
+                    step=step>0?Math.ceil(step):Math.floor(step);
+                    ele.style.left=ele.offsetLeft+step+"px"
+                    if(Math.abs(target-ele.offsetLeft)<=Math.abs(step)){
+                        ele.style.left=target+"px";
+                        clearInterval(ele.timer)
+                    }
+
+                },17)
+            }
+
+        }
+
+    </script>
+
+</head>
+<body>
+<div class="box">
+    <span></span>
+    <ul>
+        <li>首页新闻</li>
+        <li>师资力量</li>
+        <li>活动策划</li>
+        <li>企业文化</li>
+        <li>招聘信息</li>
+        <li>公司简介</li>
+        <li>上海校区</li>
+        <li>广州校区</li>
+    </ul>
+</div>
+
+
+</body>
+</html>

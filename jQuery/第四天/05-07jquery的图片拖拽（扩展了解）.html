@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        img {
+            position: absolute;
+        }
+    </style>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $("img").mousedown(function (e) {
+                var disx = e.offsetX;
+                var disy = e.offsetY;
+//                console.log(disx);
+
+                this.setCapture&&this.setCapture();
+
+                $(document).on({
+                    "mousemove": function (e) {
+                        $("img").css({
+                            "left": e.pageX-disx,
+                            "top": e.pageY-disy
+                        })
+                    },
+                    "mouseup": function () {
+                        $(this).off()
+                        this.releaseCapture&&this.releaseCapture()
+                    }
+                })
+                return false
+            })
+        })
+
+    </script>
+</head>
+<body style="height: 2000px;">
+<img src="images/1-small.jpg" alt="" />
+</body>
+</html>

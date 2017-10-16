@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            display: none;
+        }
+    </style>
+    <!--<script>-->
+        <!--window.onload= function () {-->
+            <!--var input=document.getElementsByTagName("input");-->
+            <!--var div = document.getElementsByTagName("div");-->
+            <!--input[0].onclick= function () {-->
+                <!--for(var i=0;i<div.length;i++){-->
+                    <!--div[i].style.display="block"-->
+                <!--}-->
+            <!--}-->
+            <!--input[1].onclick= function () {-->
+                <!--for(var i=0;i<div.length;i++){-->
+                    <!--div[i].innerText="哈哈啊哈哈"-->
+                <!--}-->
+            <!--}-->
+
+
+        <!--}-->
+
+    <!--</script>-->
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $("input:eq(0)").click(function(){
+                $("div").show()
+
+            })
+            $("input:eq(1)").click(function () {
+                $("div").text("heheheh")
+            })
+        })
+        
+    </script>
+</head>
+<body>
+<input type="button" value="点击显示"/>
+<input type="button" value="点击显示内容"/>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

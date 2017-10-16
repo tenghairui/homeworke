@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function aaa(ele,eve,fn){
+        if(ele.removeEventListener){
+            ele.removeEventListener(eve,fn);
+        }else if(ele.removeEvent){
+            ele.removeEvent("on"+eve,fn);
+        }else{
+            eve["on"+eve]=null
+        }
+    }
+
+
+</script>
+</body>
+</html>

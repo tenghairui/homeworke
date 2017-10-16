@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        div {
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            z-index: 99;
+        }
+        button {
+            position: absolute;
+            top: 20px;
+            left: 280px;
+            width: 80px;
+            height: 40px;
+            font-size:20px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var but=document.getElementsByTagName("button")[0];
+            var img =document.getElementsByTagName("img")[0];
+            var div =document.getElementsByTagName("div")[0];
+            but.onclick=function(){
+                img.style.width="800px"
+                img.style.left="250px"
+                img.style.top="70px"
+                img.style.zIndex="999"
+                img.style.opacity = "0.8"
+
+                div.style.width="820px"
+                div.style.top="65px"
+                div.style.left="240px"
+                div.style.height="510px"
+
+            }
+
+
+
+
+        }
+    </script>
+
+</head>
+<body>
+<button>走你...</button>
+<img src="image/2.jpg" width="200" alt=""/>
+<div class="box"></div>
+
+</body>
+</html>

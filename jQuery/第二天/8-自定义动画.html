@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box {
+            background-color: blue;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            right: 50px;
+            bottom: 0;
+        }
+        #box2 {
+            background-color: orange;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            right: 50px;
+            bottom: 0;
+        }
+        #box3 {
+            background-color: blue;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 0px;
+            top: 0;
+        }
+        #box4 {
+            background-color: orange;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 0px;
+            bottom: 0;
+        }
+    </style>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+
+                $("#box").animate({width:1300},1000)
+                $("#box2").animate({height:1200},1000)
+                $("#box3").animate({width:1266},1000)
+                $("#box4").animate({height:1400},1000)
+
+        })
+
+    </script>
+</head>
+<body>
+<div id="box"></div>
+<div id="box2"></div>
+<div id="box3"></div>
+<div id="box4"></div>
+</body>
+</html>

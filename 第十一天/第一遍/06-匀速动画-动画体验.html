@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        button {
+            width: 100px;
+            height: 50px;
+            margin: 20px;
+            font: 500 22px/50px "simsun";
+        }
+        .box1 {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            background-color: #eee;
+        }
+        .box2 {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+
+</head>
+<body>
+<button>走你...</button>
+<div class="box1">
+    <div class="box2" id="box2">
+        忠厚传家久，诗书济世长...
+    </div>
+</div>
+<script>
+    var but=document.getElementsByTagName("button")[0];
+    var box2 =document.getElementById("box2");
+
+    but.addEventListener("click",function(){
+        //利用动画设置盒子移动；
+        setInterval(function(){
+            box2.style.left=box2.offsetLeft+10+"px";
+        },30)
+    })
+
+</script>
+
+
+</body>
+</html>

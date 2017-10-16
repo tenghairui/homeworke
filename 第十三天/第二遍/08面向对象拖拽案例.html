@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    //创建匿名函数自己调用自己
+    (function (window) {
+        // 创建构建函数
+        function Fn(box) {
+            this.ccc = document.getElementById(box);
+            //构建函数一定要清空数据
+            this.clientx = 0;
+            this.clienty = 0
+        }
+
+        //原型方程式
+        Fn.prototype.aaa = function (even) {
+            var that = this//将this赋值个that
+            //在原型中填放事件
+            this.ccc.onmousedown = function (event) {
+                event = event || event//全局变量，就写则一个就好
+                //获取鼠标在盒子中的坐标
+                that.clientx = event.clientX - this.offsetLeft
+                that.clienty = event.clientY - this.offsetTop;
+                //遵循第二条  容易被调用07面向对象拖拽案例.html
+                document.onmousemove = function (event) {
+                    that.bbmove(event)
+                }
+                //遵循第二条  容易被调用
+                document.onmouseup = function (event) {
+                    that.bbup(event)
+                }
+            }
+
+
+        }
+        Fn.prototype.bbmove = function (event) {
+            //赋值给this.ccc
+            this.ccc.style.left = event.clientX - this.clientx + "px"
+            this.ccc.style.top = event.clientY - this.clienty + "px"
+        }
+        //鼠标弹起的时候事件全部取消
+        Fn.prototype.bbup = function (event) {
+            document.onmousemove = document.onmouseup = null
+        }
+
+        window.Fn = Fn
+
+    })(window)
+
+    var ddd = new Fn("box");
+    ddd.aaa()
+</script>
+</body>
+</html>
