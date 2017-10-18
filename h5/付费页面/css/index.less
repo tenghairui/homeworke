@@ -6,7 +6,7 @@
 
 @media screen and (width : 360px) {
     html {
-        font-size: 360px/20;
+        font-size: 360px/25;
     }
 }
 
@@ -25,9 +25,11 @@ header {
     width: 100%;
     height: (90rem/30);
     line-height: (90rem/30);
+    box-shadow: 0 0 1px @headerColor;
     padding: 0 (22rem/30);
     box-sizing: border-box;
     background-color: @headerColor;
+    overflow: hidden;
 
     a {
         color: @headeraColor;
@@ -50,4 +52,116 @@ header {
         }
 
     }
+    .huida {
+        display: block;
+        float: left;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        color: @headeraColor;
+        font-size: (36rem/30);
+    }
+    .caidan {
+        position: absolute;
+        right: (26rem/30);
+        top: (25rem/30);
+        width: (47rem/30);
+        height: (43rem/30);
+        background: url('../image/images/caidan_03.png');
+        background-size: (47rem/30) (43rem/30);
+        background-position: center ;
+    }
 }
+
+    //主体部分  
+main {
+    width: 100%;
+
+    // 去听听
+    .music {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+    //导航
+    .nav {
+        width: 100%;
+        height: (68rem/30);
+        padding: 0 (100rem/30);
+        box-shadow: 0 0 1px #000;
+        line-height: (68rem/30);
+        box-sizing: border-box;
+
+        a {
+            display:block;
+            float: left;
+            width: 33.33%;
+            height: 100%;
+            text-align: center;
+            font-size: (30rem/30);  
+        }
+        .xinjin {
+            color: @xinjinColor;
+        }
+        .caihua {
+            color: @caihuaColor;
+        }
+        .wenti {
+            color : @wentiColor;
+            
+            span {
+                display: block;
+                width: (94rem/30);
+                margin: 0 auto;
+                height: 100%;
+                border-bottom: 3px solid @wentiColor;
+                box-sizing: border-box;
+            }
+        }
+    }
+    // 搜索
+    .sousuo {
+        width: 100%;
+        height: (60rem/30);
+        margin: (22rem/30) 0;
+        padding: 0 (36rem/30);
+        box-sizing: border-box;
+
+        .sousuo-bar {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border: 2px solid @sousuoBorder;
+            border-radius: (40rem/30);
+            // box-sizing: border-box;
+            
+            input {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                border-radius: (40rem/30);
+                background-color: @inputColor;
+                border: none;
+                
+                &::placeholder {
+                    color: @inputZi;
+                }
+             
+            }
+            .fangdajing {
+                position: absolute;
+                right: (14rem/30);
+                top: (10rem/30);
+                width: (38rem/30);
+                height: (38rem/30);
+                background: url('../image/images/fangdajing_03.png');
+                background-size: (38rem/30) (38rem/30);
+                background-position: center ;
+            } 
+        }
+    }
+}
+
