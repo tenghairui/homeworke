@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./lib/css/bootstrap.css">
+    <title>Document</title>
+    <style>
+        .item {
+            width: 100%;
+            height: 190px;
+            padding-right: 80px;
+            background-color: #f8f8f8;
+            position: relative;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .item .item-left {
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+        }
+
+        .item .item-left h2 {
+            font-size: 22px;
+            text-align: center;
+            color: skyblue;
+        }
+
+        .item .item-left ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .item .item-left ul li:nth-child(1) {
+            float: left;
+        }
+
+        .item .item-left ul li:nth-child(2) {
+            float: right;
+        }
+        .item .item-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 100%;
+            border-left: 1px dashed #333;
+            text-align: center;
+            padding-top: 70px;
+        }
+        .item .item-right::before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 1px 0 #fff;
+        }
+        .item .item-right::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: -8px;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 1px 0 #fff;
+        }
+        .item.ccc {
+            background-color: red;
+            color: #fff;
+        }
+        .item.ccc h2 {
+            color: #fff;
+        }
+        .aaa {
+            width: 190px;
+            height: 16px;
+        }
+        .ddd.btn {
+            padding: 0.1px;
+            font-size: 14px;
+        }
+        .item-right .ddd.btn:first-child {
+            border-color: yellowgreen;
+            color: yellowgreen;
+        }
+        .item-right .ddd.btn:last-child {
+            border-color: red;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 布局 -->
+    <div class="container-fluid">
+        <!-- 列 -->
+        <div class="row">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#home" data-toggle="tab">home</a>
+                </li>
+                <li>
+                    <a href="#profile" data-toggle="tab">profile</a>
+                </li>
+                <li>
+                    <a href="#messages" data-toggle="tab">messages</a>
+                </li>
+                <li>
+                    <a href="#settings" data-toggle="tab">settings</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="home">
+                    <!-- 布局 -->
+                    <div class="container-fluid">
+                        <!-- 列 -->
+                        <div class="row">
+                            <!-- 最大的时候分为一份 中等的时候分为三份 最小的时候分为两分 -->
+                            <div class="col-sm-6 col-xs-12 col-md-4">
+                                <!-- 盒子 -->
+                                <div class="item">
+                                    <!-- 盒子的左边部分 -->
+                                    <div class="item-left">
+                                        <h2>新手体验</h2>
+                                        <ul>
+                                            <li>起诉金额</li>
+                                            <li>起诉金额</li>
+                                        </ul>
+                                        <ul>
+                                            <li>0.01万</li>
+                                            <li>0.01万</li>
+                                        </ul>
+                                        <ul>
+                                            <li>借款期限</li>
+                                            <li>借款期限</li>
+                                        </ul>
+                                        <ul>
+                                            <li>10天</li>
+                                            <li>10天</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 盒子的右半边部分 -->
+                                    <div class="item-right">
+                                        <p>8</p>
+                                        <p>年利率</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 最大的时候分为一份 中等的时候分为三份 最小的时候分为两分 -->
+                            <div class="col-sm-6 col-xs-12 col-md-4">
+                                    <!-- 盒子 -->
+                                    <div class="item ccc">
+                                        <!-- 盒子的左边部分 -->
+                                        <div class="item-left">
+                                            <h2>新手体验</h2>
+                                            <ul>
+                                                <li>起诉金额</li>
+                                                <li>起诉金额</li>
+                                            </ul>
+                                            <ul>
+                                                <li>0.01万</li>
+                                                <li>0.01万</li>
+                                            </ul>
+                                            <ul>
+                                                <li>借款期限</li>
+                                                <li>借款期限</li>
+                                            </ul>
+                                            <ul>
+                                                <li>10天</li>
+                                                <li>
+                                                    <div class="progress aaa">
+                                                        <div class="progress-bar" style="width: 60%;">
+                                                          60%
+                                                        </div>
+                                                      </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- 盒子的右半边部分 -->
+                                        <div class="item-right">
+                                            <p>8</p>
+                                            <p>年利率</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 最大的时候分为一份 中等的时候分为三份 最小的时候分为两分 -->
+                            <div class="col-sm-6 col-xs-12 col-md-4">
+                                    <!-- 盒子 -->
+                                    <div class="item">
+                                        <!-- 盒子的左边部分 -->
+                                        <div class="item-left">
+                                            <h2>新手体验</h2>
+                                            <ul>
+                                                <li>起诉金额</li>
+                                                <li>起诉金额</li>
+                                            </ul>
+                                            <ul>
+                                                <li>0.01万</li>
+                                                <li>0.01万</li>
+                                            </ul>
+                                            <ul>
+                                                <li>借款期限</li>
+                                                <li>借款期限</li>
+                                            </ul>
+                                            <ul>
+                                                <li>10天</li>
+                                                <li>10天</li>
+                                            </ul>
+                                        </div>
+                                        <!-- 盒子的右半边部分 -->
+                                        <div class="item-right">
+                                            <p>8</p>
+                                            <p>年利率</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                        </div>
+                        <div class="col-sm-6 col-xs-12 col-md-4">
+                                <!-- 盒子 -->
+                                <div class="item">
+                                    <!-- 盒子的左边部分 -->
+                                    <div class="item-left">
+                                        <h2>新手体验</h2>
+                                        <ul>
+                                            <li>起诉金额</li>
+                                            <li>起诉金额</li>
+                                        </ul>
+                                        <ul>
+                                            <li>0.01万</li>
+                                            <li>0.01万</li>
+                                        </ul>
+                                        <ul>
+                                            <li>借款期限</li>
+                                            <li>借款期限</li>
+                                        </ul>
+                                        <ul>
+                                            <li>10天</li>
+                                            <li>10天</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 盒子的右半边部分 -->
+                                    <div class="item-right">
+                                        <p>
+                                                <button type="button" class="xxx btn btn-default ddd" data-toggle="tooltip" data-placement="bottom" >宝</button>
+                                                <button type="button" class="xxx btn btn-default ddd" data-toggle="tooltip" data-placement="right">贝</button>
+                                        </p>
+                                        <p>8</p>
+                                        <p>年利率</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                    </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="profile">2</div>
+                <div class="tab-pane" id="messages">3</div>
+                <div class="tab-pane" id="settings">4</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/jQuery.min.js"></script>
+    <script src="./lib/js/bootstrap.js"></script>
+</body>
+
+</html>

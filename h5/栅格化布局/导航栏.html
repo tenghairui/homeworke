@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./lib/css/bootstrap.css">
+    <title>Document</title>
+    <style>
+        .wjs-nav {
+            height: 80px;
+            /* border-right-color: #f8f8f8; */
+            background-color: #f8f8f8;
+        }
+        .navbar-default {
+            border: none;
+        }
+        .navbar-nav > li > a {
+            padding: 0 15px;
+            width: 100%;
+            line-height: 80px;
+        }
+        .navbar-brand {
+            padding: 0;
+            margin-right: 20px;
+            margin-left: 20px;
+            height: 80px;
+            padding-top: calc((80px - 55px)/2);
+        }
+        .navbar-toggle {
+            margin-top: calc((80px - 34px)/2);
+        }
+        @media screen and (max-width:767px) {
+            .navbar-nav >li >a {
+                height: 40px;
+                line-height: 40px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- 容器 -->
+    <div class="wjs-nav">
+        <!-- 布局 -->
+        <div class="container">
+            <!-- 列 -->
+            <div class="row">
+                <!-- 导航栏 -->
+                <nav class="navbar navbar-default">
+                    <!-- 布局 -->
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <!-- 屏幕缩小时的菜单按钮 -->
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                                aria-expanded="false">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- logo -->
+                            <a class="navbar-brand" href="#">
+                                <img src="./images/logo.png" alt="">
+                            </a>
+                        </div>
+                        <!-- 导航栏 -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active">
+                                    <a href="#">我要投资</a>
+                                </li>
+                                <li>
+                                    <a href="#">我要借贷</a>
+                                </li>
+                                <li>
+                                    <a href="#">平台介绍</a>
+                                </li>
+                                <li>
+                                    <a href="#">新手专区</a>
+                                </li>
+                                <li>
+                                    <a href="#">最新动态</a>
+                                </li>
+                                <li>
+                                    <a href="#">微平台</a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav navbar-nav navbar-right hidden-sm">
+                                <li>
+                                    <a href="#">个人中心</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jQuery.min.js"></script>
+    <script src="./lib/js/bootstrap.js"></script>
+</body>
+
+</html>
