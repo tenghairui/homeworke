@@ -1,0 +1,320 @@
+// 先引变量表
+@import './setting.less';
+// 在引进默认样式
+@import './reset.less';
+// 引进兼容样式
+@import './normalize.less';
+
+body {
+    background-color: #fff;
+}
+.wjs {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.content {
+    width: 100%;
+    margin: 0 auto;
+}
+// 顶部
+.topnav {
+    width: 100%;
+    height: @topHeight;
+    border: 1px solid @topBorderColor;
+    background-color: @white;
+
+    .container {
+        width: @smallWidth;
+        margin: 0 auto;
+
+        div {
+            float: left;
+            line-height: @topHeight;
+            border-left: 1px solid @topBorderColor;
+            font-size: 12px;
+            text-align: center;
+            color: #666;
+
+            &:first-child {
+                border-left: none;
+            }
+            a {
+                color: #666;
+            }
+        }
+    }
+    .shouji {
+        width: @qrcodeWidth;
+    }
+    .dianhua {
+        width: @serviceWidth;
+    }
+    .wenti {
+        width: @extraWidth;
+    }
+    div .zhuce {
+        width: @joinWidth;
+
+        a {
+            font-size: 14px;
+
+            &:first-child {
+                padding: 3px 5px;
+                background-color: @signupColor;
+                color: @white;
+                border-radius: @topRadius;
+            }
+        }
+    }
+}
+// 导航
+.nav {
+    width: 100%;
+    height: @navHeight;
+    line-height: @navHeight;
+    border-bottom: 1px solid #ccc;
+    margin: 0 auto;
+    background-color: @white;
+
+    .container {
+        width: @smallWidth;
+        margin: 0 auto;
+    }
+    ul {
+        width: 100%;
+        height: 100%;
+
+        li {
+            height: @navHeight;
+            float: left;
+            position: relative;
+            
+            &:first-child {
+                margin-right: 30px;
+
+                a {
+                    padding: 0;
+                }
+            }
+            &:last-child {
+                float: right;
+                margin-right: @centerRight;
+            }
+            &:hover {
+                b {
+                    opacity: 1;
+                }
+                a {
+                    color: #333;
+                }
+            }
+
+        }
+    }
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0 15px;
+        color: #666;
+    }
+    b {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border: 2px solid @signupColor;
+        transition: all 0.5s;
+        opacity: 0;
+    }
+    img {
+        width: @navImgWidth;
+        vertical-align: middle;
+    }
+}
+
+// 轮播图
+.carousel.swipe {
+    width: 100%;
+    overflow: hidden;
+    visibility: hidden;
+    position: relative;
+
+    .swipe-wrap {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        >li {
+            float: left;
+            width: 100%;
+            position: relative;
+
+            >img {
+                width: 100%;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+// 专长
+.expertise {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    padding: @exPadding;
+
+    .container {
+        width: 1170px;
+        margin: 0 auto;
+        dl {
+            float: left;
+            width: 33.33%;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+        dt {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        dd {
+            margin:20px 0;
+            font-size: 14px; 
+            
+        }
+        span {
+            font-family: @exFontFamily;
+            font-size: 12px;
+            margin-right: 5px;
+            color: @exColor;
+          }
+    }
+}
+// 通知
+.notify {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    background-color: #fff;
+
+    .container {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 0 15px;
+        font-size: 14px;
+        position: relative;
+
+        li {
+          margin-bottom: 5px;
+          
+          &:first-child {
+            margin-top: 20px;
+          }
+
+          &:last-child {
+              position: absolute;
+              top: 0;
+              right: 0;
+
+              img {
+                  height: @notifyImgHeight;
+                  width: auto;
+              }
+          }
+          .num {
+              color: @notifyColor;
+
+          }
+          .num .hehe {
+            color: @notifyColor;
+            border-bottom: 1px dashed ; 
+          }
+          .sky {
+             color: @notifyqaColor;
+              margin: 0 10px;
+          }
+
+        }
+    }
+}
+// 借贷
+.loan {
+    width: 100%;
+    padding: 0 20px;
+    background: url('../images/box-style-bg.png');
+    margin: 0 auto;
+    border-top: 1px solid #ccc;
+
+    .loan-wrap {
+        width: 1170px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+    }
+    .tab-wrap {
+        height: @tabsHeight;
+        width: 100%;
+
+    }
+}
+// 新闻
+
+// 底部
+.footer {
+    margin-top: 20px;
+    width: 100%;
+    border-top:  1px solid @topBorderColor;
+
+    .aboutme {
+        width: 100%;  
+        background-color: @white;
+        
+        ul {
+            width: 100%;
+            text-align: center;
+            font-size: 0;
+        }
+        li {
+            font-size: 12px;
+            vertical-align: middle;
+            display: inline-block;
+            padding: 12px 0;
+            margin: 0 4px;
+
+            &:nth-last-child(-n+4){
+                margin: 0
+            }
+            span {
+                margin: 0 2px;
+            }
+        }
+    }
+    .copyright {
+        width: 100%;
+        background-color: @copyrightBg;
+        overflow: hidden;
+
+        >p {
+            padding: 12px 0;
+            text-align: center;
+            font-size: 12px;
+            color: @white;
+        }
+        .company {
+            width: 100%;
+            height: 42px;
+            text-align: center;
+            padding-bottom: 20px;
+
+            img {
+                height: 100%;
+                width: auto;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+    
