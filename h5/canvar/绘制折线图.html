@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <canvas></canvas>
+        
+            <script>
+                var canvas = document.querySelector('canvas');
+        
+                canvas.width = '600';
+                canvas.height = '300';
+                canvas.style.border = '1px solid red';
+        
+                var context = canvas.getContext('2d');
+                
+                // 设置小三角的大小10
+                var aWidth = 10;
+                // 设置坐标轴距离边框距离20
+                var squss = 20;
+
+                var zerox = squss;
+                var zeroy = canvas.height - squss;
+
+                // 设置x轴线段
+                context.moveTo(zerox,zeroy);
+                context.lineTo(canvas.width-squss,zeroy);
+                context.lineTo(canvas.width-squss-aWidth/2,canvas.height - squss+aWidth/2);
+                context.lineTo(canvas.width-squss-aWidth/2,canvas.height-squss - aWidth/2);
+                context.lineTo(canvas.width-squss,zeroy);
+                context.fill();
+                context.stroke();
+
+                //设置y轴
+                context.moveTo(zerox,zeroy);
+                context.lineTo(zerox,squss);
+                context.lineTo(zerox+aWidth/2,squss+aWidth/2);
+                context.lineTo(zerox-aWidth/2,squss+aWidth/2);
+                context.lineTo(zerox,squss);
+                context.fill();
+                context.stroke();
+            </script>
+</body>
+</html>

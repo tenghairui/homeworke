@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas></canvas>
+
+    <script>
+        // 获取画布
+        var canvas = document.querySelector('canvas');
+
+        // 设置画布大小
+        canvas.width = '600';
+        canvas.height = '300';
+        canvas.style.border = '1px solid red';
+
+        // 设置画笔
+        var context = canvas.getContext('2d');
+
+        // 计划线段的起点
+        context.moveTo(10,10);
+
+
+        // 计划线段的终点
+        context.lineTo(110,110);
+        context.lineTo(110,10);
+        context.lineTo(10,10);
+
+
+
+        // 开始画笔
+        context.stroke();
+
+    
+    </script>
+</body>
+</html>

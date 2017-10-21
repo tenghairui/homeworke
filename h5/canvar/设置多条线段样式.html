@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas></canvas>
+
+    <script>
+       var canvas = document.querySelector('canvas');
+
+        canvas.width = '600';
+        canvas.height = '300';
+        canvas.style.border = '1px solid red';
+
+        var context = canvas.getContext('2d');
+        //第一条线
+        context.beginPath();
+        context.moveTo(100,50);
+        context.lineTo(200,50);
+        context.strokeStyle = 'red';
+        context.stroke();
+
+        // 第二条线
+        context.beginPath();
+        context.moveTo(100,100);
+        context.lineTo(200,100);
+        context.strokeStyle = 'orange';
+        context.stroke();
+
+        // 第三条线
+        context.beginPath();
+        context.moveTo(100,150);
+        context.lineTo(200,150);
+        context.strokeStyle = 'skyblue';
+        context.stroke();
+
+
+    </script>
+</body>
+</html>
