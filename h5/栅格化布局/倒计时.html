@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 200px;
+            height: 100px;
+            margin: 100px auto;
+        }
+        span {
+            display: inline-block;
+            background-color: orange;
+            padding: 12px 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span>00</span> :
+        <span>00</span> :
+        <span>00</span>
+    </div>
+
+    <script>
+        var box = document.querySelector('.box');
+        var span = document.querySelectorAll('span');
+        var sss = 7200;
+        
+        var timer = setInterval(function(){
+            var shi = Math.floor(sss/60/60);
+            var fen = Math.floor(sss/60%60);
+            var miao = Math.floor(sss%60);
+
+            shi = shi>9?shi:'0'+shi;
+            fen = fen>9?fen:'0'+fen;
+            miao = miao>9?miao:'0'+miao;
+
+            span[0].innerHTML=shi;
+            span[1].innerHTML=fen;
+            span[2].innerHTML=miao
+            
+            sss--
+        },1000)
+
+    </script>
+
+</body>
+
+</html>

@@ -22,7 +22,7 @@
                 var aWidth = 10;
                 // 设置坐标轴距离边框距离20
                 var squss = 20;
-
+                
                 var zerox = squss;
                 var zeroy = canvas.height - squss;
 
@@ -43,6 +43,11 @@
                 context.lineTo(zerox,squss);
                 context.fill();
                 context.stroke();
+
+                // 设置小方块大小
+                var aaa = 4 
+                context.fillRect(zerox-aaa/2,zeroy-aaa/2,4,4);
+
             </script>
 </body>
 </html>
